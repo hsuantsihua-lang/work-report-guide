@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>把口述，變成你的報告｜ChatGPT 報告入門指南</title>
+<style>
+:root{--paper:#fcfbf7;--white:#fff;--ink:#263349;--muted:#586578;--blue:#4163a1;--deep:#2c4b82;--wash:#edf1f8;--yellow:#f9d387;--line:#d8dce3;--radius:5px}
+*{box-sizing:border-box}html{scroll-padding-top:88px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.8 "PingFang TC","Microsoft JhengHei",system-ui,sans-serif}button,textarea{font:inherit}button{cursor:pointer;min-height:44px;border-radius:var(--radius)}button:disabled{cursor:wait;opacity:.65}button,a{touch-action:manipulation;-webkit-tap-highlight-color:transparent}a{color:var(--deep);text-underline-offset:5px}button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--blue);outline-offset:4px}::selection{background:var(--yellow);color:var(--ink)}textarea{caret-color:var(--blue)}[hidden]{display:none!important}.wrap{max-width:1160px;margin:auto;padding:0 44px}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding:19px 0;font-size:14px}.top strong{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.03em}.top a{font-size:13px}.icon{width:23px;height:23px;flex-shrink:0;vertical-align:middle;color:var(--blue)}.hero{display:grid;grid-template-columns:1.4fr 1fr;gap:50px;align-items:center;padding:40px 0 36px}.hero h1{font-family:"Noto Serif TC","Songti TC","STSong",Georgia,serif;font-size:clamp(36px,4.2vw,53px);font-weight:700;letter-spacing:-.025em;line-height:1.4;margin:0 0 16px;text-wrap:balance}.hero p{font-size:17px;color:var(--muted);margin:0;max-width:36em}.hero mark{color:inherit;background:linear-gradient(transparent 75%,var(--yellow) 75%)}.hero-path{justify-self:end;margin:0;max-width:310px;width:100%;color:var(--blue)}.hero-path svg{width:100%;height:102px;display:block}.hero-path figcaption{font-size:14px;text-align:center;color:var(--muted);margin-top:10px;letter-spacing:.03em}.nav-band{position:sticky;top:0;z-index:3;background:var(--paper);border-bottom:1px solid var(--line)}.tabs{display:flex;gap:44px}.tabs button{min-width:160px}.tabs button{position:relative;border:0;background:none;color:var(--muted);border-radius:0;padding:15px 0;text-align:left}.tab-label{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:600}.tabs small{display:block;font-size:13px;font-weight:400;margin-top:3px;margin-left:33px}.tabs [aria-selected=true]{color:var(--deep)}.tabs [aria-selected=true]::after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:3px;background:var(--blue)}.tabs button:hover .tab-label{text-decoration:underline;text-underline-offset:5px}main{padding-top:28px!important;padding-bottom:46px!important}.panel-heading{display:flex;align-items:baseline;gap:24px;margin-bottom:22px}.panel-heading h2{font-size:23px;margin:0;font-weight:600}.panel-heading p{font-size:14px;color:var(--muted);margin:0}.workspace{display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px}.menu{margin:0;padding:0;list-style:none;align-self:start}.menu li{border-bottom:1px solid var(--line)}.menu li:first-child{border-top:1px solid var(--line)}.menu button{display:flex;width:100%;align-items:center;gap:13px;background:none;border:0;padding:15px 12px;border-radius:0;text-align:left;color:var(--muted);font-size:15px;line-height:1.65}.menu button[aria-current=true]{background:var(--wash);color:var(--deep);font-weight:600}.menu button:hover{color:var(--deep);text-decoration:underline;text-underline-offset:4px}.menu .arrow{width:17px;height:17px;margin-left:auto;flex-shrink:0}.step-num{font-family:Georgia,serif;font-size:22px;line-height:1.2;color:var(--blue);min-width:21px;font-variant-numeric:tabular-nums}.menu .menu-text{flex:1}.menu small{display:block;font-size:12px;font-weight:400;color:var(--muted)}.lesson{min-width:0}.lesson h3{font-size:27px;line-height:1.55;letter-spacing:-.01em;font-weight:650;display:flex;align-items:flex-start;gap:12px;margin:0 0 12px}.lesson h3 .icon{width:28px;height:28px;margin-top:6px}.lead{margin:0 0 21px;color:var(--muted);font-size:16px;max-width:42em}.notice{background:#fff1d5;padding:14px 18px;margin:0 0 24px;font-size:14px;line-height:1.8}.notice p{margin:0}.notice a{white-space:nowrap}.do-list{padding:0;margin:21px 0;list-style:none;counter-reset:steps}.do-list li{counter-increment:steps;position:relative;padding-left:32px;margin:13px 0;font-size:16px;line-height:1.9}.do-list li::before{content:counter(steps)".";position:absolute;left:0;color:var(--blue);font-weight:600;font-variant-numeric:tabular-nums}.analogy{padding:0 0 18px;border-bottom:1px solid var(--line);margin:0 0 22px}.analogy h4{font-size:18px;font-weight:600;display:flex;align-items:center;gap:9px;margin:0 0 7px}.analogy p{margin:0;color:var(--muted);font-size:16px}.example{font-size:15px;line-height:1.85;margin:18px 0;padding:0;color:var(--muted)}.example strong{display:block;color:var(--ink);font-weight:600;margin-bottom:3px}.rule-split{margin:16px 0 22px}.rule-split div{display:grid;grid-template-columns:110px 1fr;gap:14px;border-bottom:1px solid var(--line);padding:9px 0;font-size:15px}.rule-split dt{font-weight:600}.rule-split dd{margin:0;color:var(--muted)}.expect{font-size:14px;margin:20px 0;color:var(--muted)}.expect strong{color:var(--ink);font-weight:600}.prompt-action{border-top:1px solid var(--line);padding-top:20px;margin-top:25px}.prompt-summary{font-size:14px;color:var(--muted);margin:0 0 12px}.prompt-summary strong{color:var(--ink);font-weight:600}.actions{display:flex;align-items:center;gap:17px;flex-wrap:wrap}.primary{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--blue);padding:10px 20px;background:var(--blue);color:#fff;font-size:15px;font-weight:600;border-radius:5px}.primary .icon{width:19px;height:19px;color:inherit}.primary:hover{background:var(--deep);border-color:var(--deep)}.primary:active{transform:translateY(1px)}.secondary{border:0;background:none;color:var(--deep);font-size:14px;padding:10px 3px;display:inline-flex;align-items:center;gap:6px;text-decoration:underline;text-underline-offset:5px}.secondary .icon{width:18px;height:18px}.secondary:hover{text-decoration-thickness:2px}.status{min-height:24px;color:var(--deep);font-size:13px;margin:8px 0 0}.step-footer{border-top:1px solid var(--line);margin-top:25px;padding-top:13px;display:flex;justify-content:space-between;align-items:center;gap:18px}.step-footer p{font-size:13px;color:var(--muted);margin:0}.step-footer button{background:none;border:0;color:var(--deep);padding:7px 0;display:flex;gap:8px;align-items:center;font-size:14px;font-weight:600}.step-footer button:hover{text-decoration:underline;text-underline-offset:5px}.step-footer .icon{width:19px;height:19px}.section-note{font-size:13px;margin:18px 0 0;color:var(--muted)}.footer{border-top:1px solid var(--line);padding-top:23px!important;padding-bottom:27px!important;color:var(--muted);font-size:12px}.footer .foot-row{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.footer p{margin:0 0 12px;max-width:70em}.sources{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);scroll-margin-top:100px}.sources h2{font-size:14px;color:var(--ink);margin:0 0 5px}.source-links{display:flex;flex-wrap:wrap;gap:6px 20px;margin:7px 0}.source-links a{min-height:36px;display:inline-flex;align-items:center}.skip{position:fixed;top:-90px;left:16px;background:#fff;z-index:10;padding:9px 16px}.skip:focus{top:12px}.hero{animation:arrive .5s cubic-bezier(.16,1,.3,1)}@keyframes arrive{from{clip-path:inset(0 0 8% 0);opacity:.85}to{clip-path:inset(0);opacity:1}}
+dialog{padding:0;border:0;border-radius:6px;width:min(740px,calc(100vw - 36px));max-height:calc(100dvh - 40px);color:var(--ink);background:var(--paper);box-shadow:0 18px 60px rgba(22,38,63,.2);overflow:auto}dialog::backdrop{background:rgba(28,39,58,.48)}.dialog-head{padding:22px 26px 16px;display:flex;align-items:flex-start;gap:18px;border-bottom:1px solid var(--line)}.dialog-head h2{font-size:22px;line-height:1.5;margin:0;flex:1}.close{border:0;background:none;color:var(--deep);font-size:14px;padding:5px 0;display:flex;align-items:center;gap:5px}.close .icon{width:18px;height:18px}.dialog-body{padding:20px 26px 24px}.dialog-body p{font-size:14px;color:var(--muted);margin:0 0 15px}.dialog-body label{display:block;font-size:13px;margin-bottom:8px;color:var(--muted)}.dialog-body textarea{width:100%;display:block;resize:vertical;height:min(41dvh,390px);min-height:160px;border:1px solid var(--line);border-radius:3px;background:var(--white);color:var(--ink);font:16px/1.85 "PingFang TC","Microsoft JhengHei",sans-serif;padding:16px;scrollbar-color:#a1afc4 var(--paper)}.dialog-actions{display:flex;align-items:center;gap:16px;margin-top:17px;flex-wrap:wrap}.dialog-actions .status{flex:1;margin:0;min-width:190px}.print-all{display:none}
+@media(max-width:900px){.wrap{padding:0 28px}.workspace{grid-template-columns:230px minmax(0,1fr);gap:32px}.hero{gap:30px}.hero-path{max-width:260px}.panel-heading{gap:16px}.lesson h3{font-size:24px}}
+@media(max-width:680px){body{font-size:16px}.wrap{padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}.top{padding:14px 0}.top strong{font-size:13px;gap:7px}.top .icon{width:20px;height:20px}.top a{font-size:12px}.hero{display:block;padding:28px 0 25px}.hero h1{font-size:36px;line-height:1.45;margin-bottom:12px}.hero p{font-size:15px;line-height:1.8}.hero-path{display:none}.tabs{gap:16px}.tabs button{padding:13px 0}.tab-label{font-size:17px;gap:6px}.tabs .icon{width:20px;height:20px}.tabs small{font-size:11px;margin-left:0;line-height:1.6}.panel-heading{display:block;margin-bottom:17px}.panel-heading h2{font-size:21px;margin-bottom:4px}.panel-heading p{font-size:13px}.workspace{display:block}.menu{margin-bottom:25px}.menu button{padding:11px 8px;font-size:14px}.menu small{font-size:12px}.menu .icon{width:21px;height:21px}.menu.beginner-menu{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line);gap:6px}.menu.beginner-menu li{border:0}.beginner-menu button{justify-content:center;gap:9px;padding:12px 3px}.beginner-menu small,.beginner-menu .arrow{display:none}.beginner-menu .menu-text{flex:0 0 auto;white-space:nowrap}.step-num{font-size:19px;min-width:0}.lesson h3{font-size:23px;margin-bottom:11px}.lesson h3 .icon{width:25px;height:25px;margin-top:5px}.lead,.do-list li,.analogy p{font-size:15px}.lead{margin-bottom:17px}.notice{font-size:13px;padding:12px 15px;margin-bottom:21px}.do-list li{padding-left:27px;margin:12px 0}.expect{font-size:13px}.prompt-action{margin-top:21px;padding-top:17px}.actions{gap:13px}.primary{padding:10px 16px;font-size:14px}.secondary{font-size:13px}.example{font-size:14px}.step-footer p{max-width:55%}.step-footer button{font-size:13px}.rule-split div{grid-template-columns:97px 1fr;gap:8px;font-size:14px}.footer .foot-row{display:block}.footer .foot-row span{display:block;margin-top:7px}.source-links{gap:4px 15px}.dialog-head{padding:18px 19px 14px}.dialog-head h2{font-size:19px}.dialog-body{padding:17px 19px 21px}.dialog-body textarea{padding:12px;font-size:16px}.dialog-actions .status{min-width:160px}.menu-picker{margin-bottom:15px}.menu-picker label{display:block;font-size:13px;margin-bottom:5px;color:var(--muted)}.menu-picker select{width:100%;font:inherit;font-size:16px;line-height:1.6;padding:12px 35px 12px 12px;color:var(--ink);background:var(--white);border:1px solid var(--line);border-radius:5px;min-height:48px}.mobile-list{display:none}}
+@media(min-width:681px){.menu-picker{display:none}}
+@media(prefers-reduced-motion:reduce){.hero{animation:none}.primary:active{transform:none}}
+@media print{.top a,.nav-band,.menu,.menu-picker,.prompt-action,.step-footer,.sources,dialog{display:none!important}.wrap{max-width:none;padding:0}body{background:#fff;color:#000;font-size:11pt}.hero{padding:12px 0;display:block}.hero h1{font-size:25pt}.hero-path{display:none}.panel-heading{display:block}.workspace{display:block}.panel[hidden],.lesson[hidden]{display:block!important}.lesson{margin-bottom:25px;break-inside:avoid}.footer{font-size:9pt}.notice{background:none;border:1px solid #999}}
+
+/* Review: category hierarchy, quieter prompt tools, and portable reading. */
+.panel-heading{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:25px}
+.menu-title{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.06em;margin:0 0 13px}
+.prompt-action{border:0;background:#f0f2f6;padding:17px 20px;margin-top:26px;border-radius:3px}
+.prompt-title{font-size:14px;font-weight:600;line-height:1.5;margin:0 0 6px;color:var(--ink)}
+.prompt-summary{font-size:13px;margin-bottom:11px}
+.prompt-summary strong{font-weight:400;color:var(--muted)}
+.prompt-copy{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid #9baac1;background:transparent;color:var(--deep);font-size:13px;font-weight:500;padding:6px 11px;min-height:40px;border-radius:3px}
+.prompt-copy .icon{width:16px;height:16px;color:inherit}.prompt-copy:hover{background:#e3e9f2;border-color:var(--blue)}.prompt-copy:active{background:#d8e2f0}
+.status:empty{display:none}.identity{flex-shrink:0;text-align:right}.identity strong{display:block;color:var(--ink);font-weight:600;font-size:14px}.identity span{display:block;font-size:13px;margin-top:3px}
+.enhanced .offline-read{display:none}html:not(.enhanced) .panel,html:not(.enhanced) .nav-band{display:none}
+.offline-read{max-width:760px;margin:auto}.offline-head h2,.read-group>h2{font-size:23px}.offline-head p{font-size:15px;color:var(--muted)}.offline-head nav{display:flex;gap:24px;flex-wrap:wrap}.read-group{padding-top:26px}.read-lesson{padding:25px 0 34px;border-top:1px solid var(--line)}.read-lesson h3{font-size:22px;margin:0 0 12px}.offline-read summary{color:var(--deep);cursor:pointer;min-height:44px;text-decoration:underline;text-underline-offset:4px}.offline-read pre{font-family:inherit;font-size:15px;line-height:1.9;white-space:pre-wrap;overflow-wrap:anywhere;margin:13px 0 0}
+@media(max-width:680px){.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.tabs button{min-width:0}.panel-heading{padding-bottom:15px;margin-bottom:17px}.menu-title{margin-bottom:8px}.prompt-action{padding:15px 16px}.prompt-copy{min-height:44px}.identity{text-align:left;margin-top:16px}.identity span{margin-top:3px!important}.section-index .section-note{display:none}.menu-picker{margin-bottom:0}.workspace{gap:24px}.offline-read pre{font-size:14px}}
+@media print{.enhanced .offline-read{display:block}.enhanced .panel{display:none!important}.offline-read details>pre{display:block!important}.offline-read details{display:block}.offline-read summary{display:none}.offline-read .prompt-action{display:block!important;background:none;padding:0}.identity{text-align:left}}
+/* Review 2: copy in the step it belongs to, clear primary action, quieter headings. */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.panel-heading{display:block}.panel-heading p{font-size:16px;color:var(--ink)}.panel-heading .glossary{font-size:14px;color:var(--muted);margin-top:4px}.glossary strong{color:var(--ink);font-weight:600}
+.tabs button:focus-visible{outline-width:2px;outline-offset:-2px}
+.kicker{font-size:14px;color:var(--muted);margin:0 0 4px;line-height:1.6}.kicker strong{font-weight:600;color:var(--blue)}
+.lesson h3{display:block}
+.do-list li .prompt-action{margin:14px 0 6px}
+.prompt-copy{background:var(--blue);border-color:var(--blue);color:#fff;font-size:14px;font-weight:600;padding:8px 16px;min-height:44px}
+.prompt-copy:hover{background:var(--deep);border-color:var(--deep)}.prompt-copy:active{background:var(--deep);transform:translateY(1px)}
+.prompt-copy.is-copied{background:var(--deep);border-color:var(--deep)}
+.footer{font-size:14px}.footer .sources{margin-top:0;padding-top:0;border-top:0}.sources h2{font-size:16px;margin-bottom:8px}.footer .sources p{line-height:1.85}
+.footer .foot-row{border-top:1px solid var(--line);margin-top:18px;padding-top:16px}.identity{text-align:left}
+@media(max-width:680px){.kicker{display:none}.section-index{margin-bottom:26px}.panel-heading p{font-size:15px}.panel-heading .glossary{font-size:13px}.do-list li .prompt-action{margin-left:-27px}.footer{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.prompt-copy:active{transform:none}}
+/* Review 3: one navigation layer under the tabs; the list title says what to do. */
+main{padding-top:34px!important}
+.menu-title{font-size:17px;font-weight:600;color:var(--ink);letter-spacing:0;line-height:1.55;margin:0 0 4px}
+.menu-note{font-size:13px;line-height:1.75;color:var(--muted);margin:0 0 16px}
+@media(max-width:680px){main{padding-top:24px!important}.menu-title{font-size:16px}.menu-note{margin-bottom:12px}}
+/* Review 4: tabs span the whole page so they read as page-level, not as the left column's title. */
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.tabs button{min-width:0;text-align:center;padding:15px 8px}
+.tab-label{justify-content:center}.tabs small{margin-left:0}
+.tabs button:focus-visible{outline:none;background:var(--wash)}.tabs button:focus-visible .tab-label{text-decoration:underline;text-underline-offset:5px}
+@media(max-width:680px){.tabs{gap:0}.tabs button{padding:13px 4px}}
+/* Review 5: the result is the goal, shown after the steps with the hero's highlighter. */
+.goal{margin:28px 0 6px}
+.goal-label{font-size:13px;font-weight:600;color:var(--blue);letter-spacing:.04em;margin:0 0 4px}
+.goal-text{font-size:19px;font-weight:600;line-height:1.75;color:var(--ink);margin:0;max-width:42em;text-wrap:pretty}
+.goal-text mark{color:inherit;background:linear-gradient(transparent 62%,var(--yellow) 62%);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 2px}
+@media(max-width:680px){.goal{margin-top:24px}.goal-text{font-size:17px}}
+@media print{.goal-text mark{background:none;text-decoration:underline}}
+/* Review 6: reading leads; copy stays easy to find as a strong outline button. */
+.prompt-copy{background:var(--white);border:2px solid var(--blue);color:var(--deep);font-size:14px;font-weight:600;padding:7px 15px;min-height:44px}
+.prompt-copy:hover{background:var(--wash);border-color:var(--deep)}.prompt-copy:active{background:var(--wash)}
+.prompt-copy.is-copied{background:var(--wash);border-color:var(--deep)}
+.do-list li{font-size:17px}
+.menu-note,.prompt-summary,.step-footer p{font-size:14px}
+.step-footer{justify-content:flex-end}
+.workspace{grid-template-columns:280px minmax(0,1fr)}
+@media(max-width:900px){.workspace{grid-template-columns:250px minmax(0,1fr)}}
+@media(max-width:680px){.do-list li{font-size:16px}.tabs small{font-size:12px}.menu-note,.prompt-summary{font-size:14px}}
+/* Version: one quiet line; full credit for screen readers. */
+.footer .version-line{margin:0;font-size:13px;color:var(--muted)}
+/* Fill-in reminder: second in the prompt block, below the title, above the buttons. */
+.fill-note{display:flex;align-items:flex-start;gap:8px;margin:0 0 13px;font-size:15px;line-height:1.75;font-weight:500;color:var(--ink)}.fill-note .icon{width:18px;height:18px;margin-top:4px;color:var(--blue)}.fill-item{white-space:nowrap;margin-right:1em}
+@media(max-width:680px){.fill-note{font-size:14px}}
+.fill-note>span{display:block}.fill-example{display:block;font-size:14px;font-weight:400;color:var(--muted);margin-top:2px}
+.ask-note{margin:16px 0 0}
+/* Annotate: a reference to the tool button in ChatGPT, not a control on this page. */
+.tool-ref{display:inline-flex;align-items:center;gap:4px;margin:0 3px;padding:0 8px;border:1px solid #cfd4dc;border-radius:6px;background:#eef0f3;color:var(--ink);font-size:.9em;font-weight:500;line-height:1.75;white-space:nowrap;vertical-align:1px;cursor:default;user-select:none;-webkit-user-select:none}.tool-ref .icon{width:15px;height:15px;color:var(--ink)}
+.fill-line{display:block}.fill-alt{font-weight:400}
+</style>
+<script id="guide-meta" type="application/json">{"version":"1.0.0","status":"local-unpublished","credit":"ZHS","build":null,"releaseDate":null,"boundaryProfile":"none"}</script>
+</head><body>
+<a class="skip" href="#guide-main">跳到教學內容</a>
+<div class="wrap"><header class="top"><strong><span data-icon="document"></span>ChatGPT 報告入門指南</strong><a href="#source-notes">工具與隱私說明</a></header>
+<div class="hero"><div><h1>把口述，<br>變成<mark>你的報告。</mark></h1><p>從一份練習報告開始。<br>跟著步驟，複製文字給 AI，做出來再一起修正。</p></div>
+<figure class="hero-path"><svg viewBox="0 0 310 102" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="37" y="12" width="26" height="46" rx="13"/><path d="M25 43v5a25 25 0 0 0 50 0v-5M50 73v14M38 87h24"/><path d="M111 49h47m-10-10 10 10-10 10"/><path d="M216 10h40l21 21v61h-61zM256 10v21h21M230 48h33M230 61h33M230 74h19"/></svg><figcaption>你口述，AI 整理，你確認。</figcaption></figure></div></div>
+<nav class="nav-band" aria-label="選擇教學區域"><div class="wrap tabs" role="tablist" aria-label="教學區域">
+<button id="tab-beginner" role="tab" aria-selected="true" aria-controls="beginner" data-section="beginner" type="button"><span class="tab-label"><span data-icon="mic"></span>初階</span><small>先完成一份報告</small></button>
+<button id="tab-advanced" role="tab" aria-selected="false" aria-controls="advanced" data-section="advanced" tabindex="-1" type="button"><span class="tab-label"><span data-icon="recipe"></span>進階</span><small>保存自己的做法</small></button>
+<button id="tab-problems" role="tab" aria-selected="false" aria-controls="problems" data-section="problems" tabindex="-1" type="button"><span class="tab-label"><span data-icon="wrench"></span>遇到問題</span><small>把修正說清楚</small></button>
+</div></nav>
+<main id="guide-main" class="wrap" tabindex="-1"><div class="offline-read"><header class="offline-head"><h2>完整閱讀版</h2><p>這個瀏覽器未啟用互動功能。全部教學仍可閱讀；點「查看完整文字」，即可選取並複製給 AI。</p><nav aria-label="完整閱讀版分類"><a href="#read-beginner">初階</a><a href="#read-advanced">進階</a><a href="#read-problems">遇到問題</a></nav></header><section id="read-beginner" class="read-group"><h2>初階｜完成一份報告</h2><article class="read-lesson"><h3>準備一個練習資料夾</h3><p class="lead">請在要操作的那台電腦上打開這一頁。先準備好資料夾和範本，後面就能讓 AI 帶著你做。</p><p class="notice">這一輪只用編的資料。檔案放在你的電腦裡，內容仍可能交給雲端模型處理；不要放入真實個案的姓名、生日、紀錄或錄音。</p><ol class="do-list"><li>新建一個資料夾，放進一份還沒填寫的 Word 範本（有標題和表格，但沒有個案內容）。</li><li>在 ChatGPT 桌面版開新對話，按「選擇專案」→「新專案」，在「新增」選這個資料夾，再按「建立專案」。</li><li>複製下方文字貼上。</li></ol><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會確認資料夾與範本，說明能做什麼；這一步先不修改文件。</p><details><summary>查看完整文字</summary><pre>我是新手，想用 ChatGPT 桌面版，把口述內容整理成 Word 報告。這次只用假資料，先完成一份報告，再考慮長期設定。
+
+請告訴我你目前連接的資料夾名稱，以及裡面找到的 Word 範本檔名，問我對不對，不要打開其他檔案。只有一份就用它；有好幾份時，列出來讓我選。資料夾不對或找不到範本時，提醒我開新對話，用「選擇專案」選我的專案，再貼一次這段文字。
+
+我回「對」之後，請讀這份範本，簡短說明報告用途、主要欄位，以及能否製作 Word 文件和查看實際版面。讀不到、工具不足或字體不可用，要明確說明，不假稱已讀或可完全還原。
+
+這一步只做準備核對，不修改原檔、不建立 AGENTS 或 Skill、不掃描其他資料夾。檔案在本機不等於模型在本機離線運算；若資料處理方式不符合我的要求，先停止讀取內容並說明。
+
+請用白話帶我處理現在最少必要的一步。準備完成後，告訴我可以開始口述。</pre></details></div><div class="goal"><p class="goal-label">完成後，你會得到</p><p class="goal-text"><mark>AI 確認範本可讀，你就能開始口述。</mark></p></div></article><article class="read-lesson"><h3>口述，讓 AI 做出草稿</h3><p class="lead">不必先寫好完整文章。把這次想記錄的事情說出來，讓 AI 幫你整理。</p><p class="example"><strong>口述時可以這樣說</strong>「化名小安，這次用合作桌遊，觀察到能等待輪流；沒有記錄專注時間。請放進範本。」</p><ol class="do-list"><li>複製下方文字，貼到剛才的對話。</li><li>AI 說可以開始後，用語音或文字說這次的活動與觀察；請用編的人和事，不確定就說不確定。</li><li>回答必要問題，再打開 AI 提供的 Word 草稿。</li></ol><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會讀範本、聽你口述、補問必要資訊，再另存報告。</p><details><summary>查看完整文字</summary><pre>我是新手，想用 ChatGPT 桌面版把口述或零散筆記整理成 Word 報告。這次全部使用假資料。
+
+沿用剛才確認好的資料夾與範本；如果這是新對話，或你還沒讀過範本，請先重新確認，不要假裝已讀到檔案。
+
+準備好後告訴我可以開始口述，再帶我填入這次內容。一次只問一個會影響成果的必要問題；能從已授權檔案取得的資訊先自行查看。我的回答足夠完成草稿時就先做，不要為了蒐集所有偏好而一直追問。
+
+保留原檔，沿用範本的字體、字級、表格與頁面設定，成果另存成明確標示「草稿」的新檔。範本中的人物資料、日期、治療目標與勾選項目，只有我明確指定時才能沿用。不補造數值、專業判斷或未提供的事實；關鍵語意不清楚時先問，其他缺資料可列為待確認。
+
+製作後請檢查內容與實際呈現的版面，核對字體、標題與表格的相對位置、分頁、截斷及是否殘留範本人物資料。如果沒有工具檢查或字體不可用，請說明限制，不宣稱格式完全一致。
+
+請提供可開啟的成果、待確認事項，以及我現在只需要看什麼。收到我的具體修正後，完成相應修改並重新檢查。不要讀取無關資料夾或把檔案對外傳送。</pre></details></div><div class="goal"><p class="goal-label">完成後，你會得到</p><p class="goal-text"><mark>一份另存的 Word 草稿，以及尚待你確認的內容。</mark></p></div></article><article class="read-lesson"><h3>看草稿，說出要改的地方</h3><p class="lead">你不用懂排版指令。說清楚「哪裡不對」與「希望變成什麼」，AI 再修改。</p><ol class="do-list"><li>在對話中點一下 AI 做好的草稿，它會在右邊的預覽區打開；先看內容是否正確，再看字體、標題和表格位置。</li><li>按預覽區上方的「標註」，點選要改的地方，或拖曳框出一塊範圍，寫下想怎麼改，再儲存；可以一次標好幾處。</li><li>複製下方文字貼到對話送出；AI 改完後再看一次，還有差異就再標註。</li><li>已經先送出也沒關係：在預覽區標註後，再送一句「請依我附上的標註修改」。</li></ol><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會依你的具體回饋修正、重新檢查，保留已確認內容和原範本。</p><p class="fill-note">貼上前，在對話中點一下文件，在右邊的預覽區用「標註」指出要改的地方。<br>沒辦法標註時，在最後寫：① 哪一頁、哪個物件　② 要變成什麼<br>例如：第 1 頁「二、治療技術」要放在勾選表上方，其他內容不變。</p><details><summary>查看完整文字</summary><pre>我已看過這份假資料報告，以下指出需要修正的位置與預期結果。請依我的具體回饋修改，不要求我重新描述全部需求。
+
+先確認我指的是哪份草稿，以及指定的範本。能從檔案或註記判斷的事項自行核對；確實有多種解釋時，一次只問一個必要問題，例如哪一頁、哪個物件、要在誰的上方或下方。
+
+保留已確認的事實和內容，沿用範本格式，只修正我指出的差異。不要新增觀察、數值、專業判斷或其他人物資料。成果另存，保留原範本，不擅自全面重做。
+
+修正後檢查實際版面，包括字體、標題與表格相對位置、分頁與截斷；不能檢查的部分明確列出。提供可開啟的文件，並用白話告訴我這次改了哪裡、現在要看什麼。
+
+依我的回饋繼續修正，直到我明確表示符合需要；不要替我宣布已滿意。這次先完成報告，不自動把臨時要求寫進全域規則或 Skill。
+
+請依我這則訊息附上的標註修改（是我在 ChatGPT 預覽區加的標註，不是 Word 檔裡的註解）；沒有標註時，依我在下方寫的內容。兩者都沒有時，請先不要修改，改問我：哪一頁、哪個物件、希望變成什麼。
+
+我的修正要求如下：</pre></details></div><div class="goal"><p class="goal-label">完成後，你會得到</p><p class="goal-text"><mark>內容與格式符合你的需要；由你確認這份報告可用。</mark></p></div></article></section><section id="read-advanced" class="read-group"><h2>進階｜保存自己的做法</h2><article class="read-lesson"><h3>個人化隱私與檔案管理</h3><p class="lead">先決定哪些資料能交給 AI，再決定怎麼存。案號與本機資料夾，都不能單獨保證資料不會被辨識或離開裝置。</p><div class="analogy"><h4>有分隔與門鎖的文件櫃</h4><p>個案分開放，哪些資料能交給哪種工具處理，要先決定。</p></div><p class="example"><strong>想像這個例子</strong>共用的食譜可以放方法；個案的紀錄放各自的位置，不把人物事實寫進共用 Skill。</p><ol class="do-list"><li>先用假資料說明管理需求，不先放入真實個案紀錄。</li><li>與 AI 確認雲端處理界線、資料夾、命名、備份與保存習慣。</li><li>看過管理方案，再授權實際建立或修改。</li></ol><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會用假資料詢問隱私與管理需求，先提出方案，再依確認範圍保存規則。</p><details><summary>查看完整文字</summary><pre>我想個人化報告專案的隱私與檔案管理。請先用假資料與資料夾結構討論，不讀取真實個案檔案或掃描整台電腦。
+
+先說明目前工具的實際資料處理方式。檔案在本機不代表模型離線運算；代號也不保證無法識別。若我要求資料完全不離開裝置，請先確認工具是否能做到；不能做到就停止讀取真實內容，改用假資料設計本地流程，不以文字規則當作技術保證。
+
+請一次問一個會影響管理方式的必要問題，釐清：可處理的資料類型與雲端界線、不同個案如何隔離、檔名是否可含識別資訊、原始資料與草稿／已確認文件的位置、誰能存取、資料夾是否有雲端同步、備份與還原、版本命名、保存與刪除責任。
+
+我的回答足夠形成方案時，先提出簡單可用的安排，列出需要我決定的剩餘差異。保護每個個案的事實，不能跨個案套用目標、觀察、診斷或勾選。風格 Skill 與共用範本不保存真實個案內容。
+
+先把計畫、精確目標資料夾與需要的操作列給我確認。確認後再更新本專案規則；若有可重複的管理步驟，可建立相應 Skill。不要直接移動、覆蓋、刪除檔案、變更分享／權限、啟用同步或上傳資料。
+
+後續實際操作另依已確認範圍授權；涉及法規或機構保存要求，不猜造規定，列為需專業或正式來源確認的事項。</pre></details></div><div class="goal"><p class="goal-label">完成後，你會得到</p><p class="goal-text"><mark>專案有明確的資料界線與檔案管理規則；日後依已確認方式處理。</mark></p></div></article><article class="read-lesson"><h3>把合作習慣存成規則</h3><p class="lead">第一份報告大致符合預期後，讓 AI 幫你把「每次都要提醒的事」保存下來。</p><div class="analogy"><h4>共同家規與房間說明</h4><p>全域 AGENTS 是共同家規，所有工作都適用；專案 AGENTS 是房間說明，只適用這個資料夾。</p></div><p class="example"><strong>想像這個例子</strong>共同家規：「都用繁體中文。」房間說明：「這裡的報告依指定範本，草稿放在草稿資料夾。」</p><ol class="do-list"><li>想一想：你偏好逐題詢問，還是先一次口述？</li><li>複製下方文字，讓 AI 讀既有規則並提出簡短修改。</li><li>確認內容後再寫入；請 AI 告訴你存在哪裡、影響哪些工作。</li></ol><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會先問清習慣、查看既有規則，再提案讓你確認後保存。</p><details><summary>查看完整文字</summary><pre>我想把這次合作中確認好用的習慣，保存成全域與專案 Agent 規則，讓之後不用一直重複提醒。
+
+請先辨識目前工具支援的規則入口與生效範圍，讀取既有全域及本專案規則。不要假定任何名叫 agent.md 的檔案都會自動載入。
+
+先整理已有答案，再一次只問一個尚未確認、會實質影響合作的問題。請釐清我的回覆語言與長度、口述與詢問習慣、檔案修改界線、成果交付方式；已有答案不要重問。資料足夠時先給簡短提案，我看過後可再調整。
+
+請分開安排：
+- 全域 AGENTS.md：所有工作共用的習慣，例如繁體中文、白話、不猜重要資料、依授權保護原檔，以及對外操作前確認。
+- 本專案 AGENTS.md：這個資料夾的用途、我指定的來源、範本與輸出位置，以及不同報告對象的資料隔離要求。
+- 具體報告製作步驟與寫作風格留給 Skill，不把所有步驟塞進全域規則。
+
+先顯示將新增或修改的內容及影響範圍，等我確認後才寫入。保留既有有效規則；有真正衝突先指出，不直接覆蓋，不把一次性的內容變成永久規則。必要時建立不覆蓋舊檔的備份，不改其他系統或權限設定。
+
+寫入後回讀，告訴我實際檔案位置，以及你怎麼確認工具會使用這些規則。工具不支援的部分請明說。</pre></details></div><div class="goal"><p class="goal-label">完成後，你會得到</p><p class="goal-text"><mark>全域 AGENTS.md 保存共通習慣，專案 AGENTS.md 保存這個資料夾的要求。</mark></p></div></article><article class="read-lesson"><h3>保存成 Skill，下次直接用</h3><p class="lead">把已經做成功的流程保存起來，包含口述整理與基本文件檢查。用第二份假資料驗證它真的能重複使用。</p><div class="analogy"><h4>把成功做法寫成食譜</h4><p>Skill 像食譜：記下材料、步驟與完成標準，下次照著做。</p></div><p class="example"><strong>想像這個例子</strong>這份食譜是「讀範本 → 聽口述 → 補問 → 製作 → 檢查」，每次換成這次的內容。</p><ol class="do-list"><li>先確認第一份草稿的內容與格式符合期待。</li><li>複製下方文字，讓 AI 建立「口述轉報告」Skill。</li><li>在同專案開新對話，使用 Skill，再做一份假資料報告。</li></ol><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會把你已確認的流程做成 Skill，再用另一份假資料試做。</p><details><summary>查看完整文字</summary><pre>第一份假資料報告已經確認好用。請幫我把這套流程保存成「口述轉報告」Skill，供目前專案重複使用。
+
+先讀本專案規則與我已確認的範本、成果和修正。若你無法取得我指的是哪份成果，先詢問，不能自行推定已驗收。
+
+一次只問一個會改變成果的必要問題，補齊仍未確定的用途、輸入、完成標準與限制。提出簡短流程摘要讓我確認；確認後，我授權你在目前工具支援且可被發現的位置建立這個 Skill。
+
+Skill 應包括：何時使用與不使用、確認報告對象與範本、口述內容整理、必要歧義詢問、事實與專業判斷界線、另存草稿、內容及基本字體／表格／分頁檢查、接受修正與交付。實際欄位和版面以指定範本為準，個別人物的事實不寫入 Skill。
+
+若工具提供既有文件製作或檢查 Skill，請沿用其能力；沒有時說明實際能檢查的範圍。完整檢查不足時不能宣稱完全一致。
+
+使用正式 SKILL.md 結構，包含 name、description 和清楚的觸發範圍，並參照目前工具的實際載入方式。不要只建立普通文字檔後宣稱它會自動載入。
+
+建立後回讀，說明檔案位置、啟用方式與我的一句啟動指令，再帶我在同專案的新對話，以第二份假資料確認規則、Skill 和範本真的有讀到。若目前工具無法自動發現，提供明確手動選取方法，不假稱成功。不要修改與這個流程無關的設定。</pre></details></div><div class="goal"><p class="goal-label">完成後，你會得到</p><p class="goal-text"><mark>新對話能找出適用規則、Skill 與範本，完成第二份報告。</mark></p></div></article><article class="read-lesson"><h3>做出「像我寫的」風格 Skill</h3><p class="lead">準備 2～3 份你認為寫得好的示範文字。先讓 AI 描述你的風格，再用新內容試寫，確認後保存。</p><div class="analogy"><h4>找一位懂你的編輯</h4><p>給編輯幾篇滿意的文章，他就能學你的語氣與組織方式。</p></div><p class="example"><strong>想像這個例子</strong>你偏好「描述看到的行為」，AI 就不該把一次觀察寫成「已有顯著進步」。</p><ol class="do-list"><li>先清除姓名、日期與其他識別資訊；最好改成假資料。</li><li>指出喜歡或不喜歡的句子，不必自己整理成規則。</li><li>看試寫結果，說哪裡不像你；確認後再保存 Skill。</li></ol><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會分析示例、用假資料試寫；你確認後，才保存成風格 Skill。</p><details><summary>查看完整文字</summary><pre>我想建立「我的報告寫作風格」Skill。我會提供已移除個人識別資訊、可交給此工具處理的示範文字。
+
+請先確認可用的示範資料與我的報告用途，分析段落組織、語氣、句子長度、用詞、觀察與推論的區分、我常用或避免的表述。範例中的人物事實、診斷與結論不代表新報告也成立。
+
+先用白話告訴我你觀察到的風格，區分有範例支持的特徵與你的推測。一次只問一個還不清楚、會影響風格的問題；不要要我重新描述範例已經能看出的事情。
+
+用一段新的假資料試寫，讓我指出哪裡像我、哪裡不像。按我的回饋調整，直到我確認符合需要；不要替我宣布已滿意，也不要為了反覆詢問拖延試寫。
+
+我確認後，授權你依目前工具支援的方式建立獨立風格 Skill，保存抽象風格規則、必要的匿名示例、觸發方式與避免事項。實際文件版面仍依指定範本；不保存原個案資料，不加入示範沒有支持的專業結論。
+
+若已有「口述轉報告」Skill，請提出如何引用這個風格 Skill 的最小修改，確認後更新，避免在兩處維護完整風格規則。最後回讀並用另一段假資料驗證可使用。</pre></details></div><div class="goal"><p class="goal-label">完成後，你會得到</p><p class="goal-text"><mark>得到獨立的寫作風格 Skill，可供口述轉報告流程引用。</mark></p></div></article><article class="read-lesson"><h3>把格式與字體檢查做得更細</h3><p class="lead">內容、寫作風格與文件版面分開檢查。尤其注意：原檔設定保留，仍可能因文字長度或字體缺少而改變分頁。</p><div class="analogy"><h4>請校稿員最後看一遍</h4><p>格式檢查 Skill 像校稿員：拿成果對照範本，檢查實際呈現。</p></div><p class="example"><strong>想像這個例子</strong>字型名稱相同，電腦缺少字體時仍可能長得不同；校稿要看真正的頁面。</p><ol class="do-list"><li>指定哪份是版面基準，哪份是待檢查成果。</li><li>說清楚最重要的要求，例如頁數、表格與標題位置。</li><li>讓 AI 比較實際畫面；看不到的項目要列為未驗證。</li></ol><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會確認你在意的格式、試跑檢查，再保存成可重複使用的 Skill。</p><details><summary>查看完整文字</summary><pre>我想建立「報告文件格式檢查」Skill，用來檢查口述轉報告產生的 Word 文件。
+
+先確認指定的基準範本、待檢查文件與目前工具能否實際開啟或渲染文件。一次只問一個會影響判斷的需求，例如哪些格式必須保留、頁數是否固定、內容增長可否換頁。不要自行假定所有報告必須一頁。
+
+請把內容核對與視覺格式核對分開。適用的檢查包括字體是否可用、字級與段落樣式、行距、頁面邊界、頁首頁尾、表格尺寸、標題與表格相對位置、勾選項目、分頁、截斷或空白頁，以及是否殘留其他人的資料。
+
+必須比較實際呈現，不能只因文件中的字型名稱相同就宣稱外觀完全一致。缺字體時先說明，不擅自替換、下載或安裝。無法渲染時清楚列出尚未驗證的項目，提供最少必要的人工檢查方法。
+
+先拿一份假資料成果試跑，簡短列出差異、可修正處與限制。我確認檢查範圍後，授權你建立正式 Skill。優先引用工具既有文件能力與指定範本，不重複複製整份範本規格。檢查預設唯讀；修正文件、替換字體或改動範本須有相應授權。
+
+建立後回讀，讓口述轉報告流程在交付前使用這個檢查 Skill，並驗證它能被發現與使用。</pre></details></div><div class="goal"><p class="goal-label">完成後，你會得到</p><p class="goal-text"><mark>可重複使用的文件格式檢查 Skill，留下可理解的差異與檢查結果。</mark></p></div></article><article class="read-lesson"><h3>讓 AI 問到剛好，做出來再調整</h3><p class="lead">逐題詢問適合剛開始；熟悉後，也可以先一次口述，再補必要問題。滿意與否由你確認。</p><div class="analogy"><h4>一起工作的訪談助手</h4><p>你可以請助手逐題問，或先聽完，再補上真正缺少的資訊。</p></div><p class="example"><strong>想像這個例子</strong>你說「先讓我講完」，助手就先記錄；有足夠材料時先出草稿，不一直訪談。</p><ol class="do-list"><li>選一種方式：逐題問、先聽完，或兩者混合。</li><li>請 AI 先整理已知內容，不重問答過的事情。</li><li>有足夠資料就看草稿，再針對差異修正。</li></ol><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會先問你的偏好，再實際試用；你確認後，才保存長期習慣。</p><details><summary>查看完整文字</summary><pre>請幫我調整這個報告流程的詢問方式。先問我偏好「逐題詢問」「先讓我一次口述，再補問」「兩者混合」哪一種，再依我的回答執行。
+
+先整理目前已知資訊與我已回答的事項。你能從已授權來源查明的事情請自行查，不把你的查核工作變成我的問題。
+
+每次只問一個會影響成果的必要問題，並告訴我這個答案會影響哪裡。我的口述若只是一般語句不順，可整理；姓名、日期、數值、單位或專業意義不清楚時不能猜。
+
+資料足夠完成有用草稿時就先做，非關鍵缺口列為待確認。看過草稿後，請我指出不符合需求之處，再修正與檢查，直到我明確確認符合預期。
+
+請先把這個節奏實際用在目前報告。只有我確認值得長期沿用後，才更新適當的專案規則或 Skill；不要把這次臨時偏好自動寫進全域。</pre></details></div><div class="goal"><p class="goal-label">完成後，你會得到</p><p class="goal-text"><mark>詢問節奏配合你，不會漏問關鍵資料，也不會無止盡訪談。</mark></p></div></article><article class="read-lesson"><h3>有不同報告，就選不同範本</h3><p class="lead">個別報告、家長回饋與行政摘要，可以共用合作習慣，各自使用指定範本與必要的工作步驟。</p><div class="analogy"><h4>先挑對表格再填寫</h4><p>像辦不同事情要拿不同表格，報告用途不同，範本也要選對。</p></div><p class="example"><strong>想像這個例子</strong>家長回饋與行政摘要可能需要不同口吻；開始時先說清楚這次要做哪一種。</p><ol class="do-list"><li>提供各範本的用途，不提供多個真實個案當練習。</li><li>請 AI 先分清共用規則與各報告的差異。</li><li>每次開始先確認這次要做哪一種。</li></ol><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會釐清各範本用途，先提最小分工方案，再用假資料驗證。</p><details><summary>查看完整文字</summary><pre>我有多種報告範本，想讓 AI 每次選對流程。請先列出我已授權讀取的範本候選與用途；用途不明時一次問一個問題，不依檔名猜定正式範本。
+
+請釐清各報告的受眾、輸入、輸出、格式與完成標準，分開共用的合作規則／風格，以及只適用某一報告的步驟。優先沿用已有正式來源，不把相同規則到處複製。
+
+先提出最小分工方案讓我確認，再建立或修改對應的專案規則與 Skill。每次開始須確認這次的報告種類、對象與範本，不能沿用上一份個案的資料。
+
+以各一份假資料驗證選用正確，並告訴我之後如何用一句話選擇。</pre></details></div><div class="goal"><p class="goal-label">完成後，你會得到</p><p class="goal-text"><mark>不同報告不混用欄位、口吻與檔案；相同規則維持單一來源。</mark></p></div></article></section><section id="read-problems" class="read-group"><h2>遇到問題｜找出修正方法</h2><article class="read-lesson"><h3>字體、表格或分頁不符合範本</h3><p class="lead">最快的方法：在對話中點一下文件，在右邊的預覽區用「標註」框出不一樣的地方，寫下希望改成什麼。不用自己找檔名，AI 會先說出它認為是哪兩份，你確認就好。</p><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會先說出它認為的範本和檔案，你確認後，只修正你指出的差異並另存。</p><p class="fill-note">貼上前，在對話中點一下文件，在右邊的預覽區用「標註」指出要改的地方。<br>沒辦法標註時，在最後寫：① 哪裡不一樣　② 希望改成什麼<br>例如：第 1 頁活動表的字變大了；要跟原範本一樣，內容不要改。</p><details><summary>查看完整文字</summary><pre>目前報告的字體、表格或分頁與我預期不符。請先告訴我你認為的範本和要修改的檔案是哪兩份；我回「對」你再改。找不到或不確定時，直接問我。
+
+請比較實際呈現，找出差異與原因，先修正我指出的問題。沿用基準的字體、字級、段落、表格和頁面設定，保留已確認的內容；修正成果另存，不覆蓋基準範本。
+
+不要只根據設定或檔案內字型名稱宣稱完全一致。若缺字體或沒有渲染工具，請明確說明哪裡未驗證，不自行替換或安裝。
+
+修正後重新檢查，提供檔案與我需要看的具體位置。若同一問題反覆發生，先查原因與最小修正，不整份重做。
+
+請依我這則訊息附上的標註修改（是我在 ChatGPT 預覽區加的標註，不是 Word 檔裡的註解）；沒有標註時，依下方【我的情況】。兩者都沒有時，請先不要修改，一項一項問我。
+
+【我的情況】
+哪裡不一樣（例如：第 1 頁表格的字變大）：
+希望改成什麼樣子：</pre></details></div></article><article class="read-lesson"><h3>標題或表格，位置不如預期</h3><p class="lead">最快的方法：在對話中點一下文件，在右邊的預覽區用「標註」直接點選那個標題或表格，寫下要移到哪裡。沒辦法標註時，再說明在哪一頁、要放在誰的上面或下面。</p><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會先確認要移動的物件與相對位置，只移動你指定的部分。</p><p class="fill-note">貼上前，在對話中點一下文件，在右邊的預覽區用「標註」指出要改的地方。<br>沒辦法標註時，在最後寫：① 在第幾頁　② 要移動的標題或表格　③ 放在誰的上面或下面　④ 可不可以換頁<br>例如：第 1 頁「二、治療技術」要在勾選表上方，和表格一起移動；可以換頁。</p><details><summary>查看完整文字</summary><pre>請依我這則訊息附上的標註或下方說明，修正指定標題、段落或表格的位置。請先告訴我你認為要修改的是哪個檔案；我回「對」你再改。
+
+先確認目標物件與相對位置：哪一頁、哪個標題或表格、應在誰的上方／下方、同頁或另頁。若註記與描述還不夠明確，一次只問一個必要問題；不要猜移到另一個章節。
+
+請只移動指定物件，保留它的文字、字體與表格內容，也保留其他已確認的內容。位置目標以我這次的明確描述為準；如果與原範本不同，指出差異，不擅自擴成重設計。
+
+檢查標題是否真的出現在對應表格之前、是否因浮動物件或分頁而跑位。另存修正版，重新查看實際版面，提供我能核對的位置或畫面。沒有工具驗證時說明限制。
+
+請依我這則訊息附上的標註修改（是我在 ChatGPT 預覽區加的標註，不是 Word 檔裡的註解）；沒有標註時，依下方【我的情況】。兩者都沒有時，請先不要修改，一項一項問我。
+
+【我的情況】
+在第幾頁：
+要移動的是哪個標題或表格（寫出上面的文字）：
+要放在什麼東西的上面或下面：
+可以跑到下一頁嗎：</pre></details></div></article><article class="read-lesson"><h3>內容太像 AI，不像我的寫法</h3><p class="lead">在對話中點一下文件，在右邊的預覽區用「標註」選取不喜歡的那句話，寫下哪裡不像你、你會怎麼寫。描述差異比只說「自然一點」更有用。</p><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會保留事實、調整語氣，先給你修改前後的比較。</p><p class="fill-note">貼上前，在對話中點一下文件，在右邊的預覽區用「標註」指出要改的地方。<br>沒辦法標註時，在最後寫：① 不喜歡的那句話　② 哪裡不像你　③ 你會怎麼寫<br>例如：「已有顯著進步」語氣太強；我會寫「這次能等待輪流兩次」。</p><details><summary>查看完整文字</summary><pre>這份報告的文字不符合我的寫作習慣。請依我指出的句子與可使用的示範文字修正。
+
+先讀已有寫作風格 Skill；若沒有，先用目前回饋調整，不擅自假造我的長期風格。一次只問一個會影響修正的必要問題。
+
+保留原始事實，調整語氣、句子長度與用詞。不要增加來源沒有的療效、因果、診斷或專業結論，也不要為了文句流暢移除重要限制。
+
+先給我修正前後的短段落比較，我確認後再改進文件，保留文件格式。只有我同意把這次修正當作長期偏好，才更新風格 Skill。
+
+請依我這則訊息附上的標註修改（是我在 ChatGPT 預覽區加的標註，不是 Word 檔裡的註解）；沒有標註時，依下方【我的情況】。兩者都沒有時，請先不要修改，一項一項問我。
+
+【我的情況】
+不喜歡的那句話（直接貼上）：
+哪裡不像你（例如：語氣太肯定、句子太長）：
+你會怎麼寫（一句就好）：</pre></details></div></article><article class="read-lesson"><h3>AI 一直問，還沒開始做</h3><p class="lead">請它列出已知資訊，區分真的缺資料與只是想知道偏好。有足夠材料就先出草稿。</p><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會停止追問、整理已知內容，能做的先做成草稿。</p><details><summary>查看完整文字</summary><pre>請先停止重複訪談，整理我已提供的內容與已確認答案。
+
+區分「現在不回答會造成錯誤的必要問題」和「可看草稿後再調整的偏好」。能從已授權檔案查明的資訊先自行查。
+
+資料足夠時直接完成目前範圍內的草稿，非關鍵缺口列為待確認。若確實無法做，現在只問一個最關鍵的問題，並說明它會影響哪裡。不要猜重要事實，也不要要求我重新說全部需求。</pre></details></div></article><article class="read-lesson"><h3>新對話沒讀到規則或 Skill</h3><p class="lead">同專案不代表每個對話自動讀過另一個對話。請 AI 說出實際讀取的規則、Skill 與範本位置。</p><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會列出實際讀到的規則、Skill 與範本位置，找不到時告訴你最少要做的一件事。</p><details><summary>查看完整文字</summary><pre>這是同專案的新對話。請先核對目前工作資料夾、適用的全域與專案規則，以及可用的口述轉報告／寫作風格／文件檢查 Skill。
+
+只回報你實際讀到的檔案位置與用途，區分「檔案存在」和「工具能自動發現並載入」。不要假定你已看過另一個對話或記得上一份個案內容。
+
+找不到時先確認工具的正式載入方式與目前位置。若需要我提供範本或手動選取 Skill，只告訴我最少需要做的一個動作；不要先重建整套規則，也不要猜用同名檔案。
+
+確認來源後，先問這次的報告種類與對象，再開始。</pre></details></div></article><article class="read-lesson"><h3>混入上一份報告或別人的資料</h3><p class="lead">先停止繼續套用。指出受影響的檔案，請 AI 依本次來源逐項核對，不能只換掉姓名。</p><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會停止套用、逐項核對殘留資料，另存乾淨版本。</p><p class="fill-note">貼上後，在最後寫：看到哪些不該出現的內容<br>例如：第 2 頁還留著上一份的日期和勾選。</p><details><summary>查看完整文字</summary><pre>這份草稿可能混入另一份報告的資料。請先停止套用或擴展內容。
+
+先告訴我你認為受影響的是哪個檔案、這份報告的對象是誰；我回「對」再繼續。只在已授權範圍內，核對姓名或代號、日期、基本資料、目標、活動、觀察、勾選，以及頁首頁尾、註解、修訂與其他可能殘留資訊；不要只替換姓名就宣稱清乾淨。
+
+本次來源未提供的事實先留白或列待確認，不從其他人物補入，不猜造正確內容。保留原檔，另存修正版，清楚列出實際檢查範圍與還不能確認的部分。
+
+若來源本身含真實敏感內容，先依已確認的資料處理界線核對你能否讀取；無授權或工具不符合要求時停止受影響讀取。
+
+找到流程原因後，提出能防止再次混用的規則或 Skill 修改，等我確認後保存。
+
+如果下方【我的情況】是空白的，請先不要修改，一項一項問我。
+
+【我的情況】
+看到哪些不該出現的內容：</pre></details></div></article><article class="read-lesson"><h3>AI 說找不到檔案，或不能修改</h3><p class="lead">如果 AI 說出的資料夾不是你的（例如名稱是一串英文），開一個新對話，用「選擇專案」選你的專案，再貼一次就好。其他情況，把下方文字貼給 AI，讓它查是連接、路徑還是權限的問題；不要一口氣開放整台電腦。</p><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會先查出是連接、路徑還是權限的問題，不擴大存取範圍。</p><details><summary>查看完整文字</summary><pre>你目前找不到檔案或無法修改。請先查明是資料夾沒有連接、檔案未下載、路徑不符、目前工具不支援，還是權限限制。
+
+先完成你能做的唯讀核對，根據實際結果說明，不宣稱不存在的檔案或未執行的操作成功。不要繞過限制，不擴大到整台電腦，也不要把同名搜尋結果直接當成目標。
+
+如果確實需要我操作，只告訴我現在在哪個畫面、按什麼、預期看到什麼，以及完成後要回報什麼。涉及新增權限，請明確說明具體範圍與原因，讓我確認。</pre></details></div></article><article class="read-lesson"><h3>越修越亂，或同一問題一直出現</h3><p class="lead">先找最後一份符合預期的版本，保存目前檔案，再釐清一個問題的原因。不要一直叫 AI 整份重做。</p><div class="prompt-action"><h4 class="prompt-title">貼給 AI 的需求</h4><p class="prompt-summary">AI 會停手、比較版本、找出原因，再提出最小修法。</p><p class="fill-note">貼上後，在最後寫：這次只想先修好的一件事<br>例如：表格一直跑到下一頁；先只修這個。</p><details><summary>查看完整文字</summary><pre>同一個問題反覆修正仍不符合預期。請先停止猜測式修改，保留目前檔案，不覆蓋或刪除既有版本。
+
+先告訴我你認為最後一份符合預期的版本和目前的檔案各是哪一份；我回「對」再繼續。讀取相關來源與實際畫面，找出能重現問題的步驟及原因；不足時只問一個必要問題。
+
+先說明差異、原因與最小修正方案。我確認後，依授權只修受影響部分，再用相同情境驗證。保留已確認內容，不用重建整份文件掩蓋問題。
+
+若受字體、工具或檔案本身限制，說明實際證據與可行替代，不假稱已完全修好。
+
+如果下方【我的情況】是空白的，請先不要修改，一項一項問我。
+
+【我的情況】
+這次只想先修好的一件事：</pre></details></div></article><p class="lead">找不到你的狀況？直接問分享這份指南給你的人。描述問題就好，不要附上真實個案的內容或截圖。</p></section></div>
+<section id="beginner" class="panel" role="tabpanel" aria-labelledby="tab-beginner"><h2 class="sr-only">初階｜完成一份報告</h2><div class="workspace"><div class="section-index"><h3 class="menu-title">跟著三步，做完一份報告</h3><p class="menu-note">這一輪只做報告，不必先學設定。</p><ol class="menu beginner-menu" aria-label="初階步驟" data-menu="beginner"></ol></div><div data-lessons="beginner"></div></div></section>
+<section id="advanced" class="panel" role="tabpanel" aria-labelledby="tab-advanced" hidden><h2 class="sr-only">進階｜保存自己的做法</h2><div class="workspace"><div class="section-index"><h3 class="menu-title">選一件想改善的事</h3><p class="menu-note glossary">不必一次學完。<strong>AGENTS</strong> 是合作規則；<strong>Skill</strong> 是可重複使用的方法。</p><div class="menu-picker"><label for="advanced-choice" class="sr-only">選一件想改善的事</label><select id="advanced-choice" data-choose="advanced"></select></div><ul class="menu mobile-list" aria-label="進階需求" data-menu="advanced"></ul></div><div data-lessons="advanced"></div></div></section>
+<section id="problems" class="panel" role="tabpanel" aria-labelledby="tab-problems" hidden><h2 class="sr-only">遇到問題｜找出修正方法</h2><div class="workspace"><div class="section-index"><h3 class="menu-title">選一個你遇到的狀況</h3><p class="menu-note">複製對應的文字貼給 AI；需要你補充時，會寫在複製按鈕上方。</p><div class="menu-picker"><label for="problems-choice" class="sr-only">選一個你遇到的狀況</label><select id="problems-choice" data-choose="problems"></select></div><ul class="menu mobile-list" aria-label="問題選擇" data-menu="problems"></ul><p class="menu-note ask-note">找不到你的狀況？直接問分享這份指南給你的人。描述問題就好，不要附上真實個案的內容或截圖。</p></div><div data-lessons="problems"></div></div></section>
+</main>
+<footer class="wrap footer"><div class="sources" id="source-notes"><h2>工具與隱私說明</h2><p>以 ChatGPT 桌面版的 Work 或 Codex 搭配你電腦裡的資料夾為例；介面與功能依版本、帳號不同，請 AI 先確認實際工具。檔案存在你的電腦裡，內容仍可能交給雲端模型處理。改用真實個案前，先確認三件事：工具怎麼處理資料、機構或專業規範是否允許、檔案怎麼存放與備份。</p><p><strong>分享方式：</strong>這份指南是一個 HTML 檔，用瀏覽器打開就能讀，不需安裝，不會讀取你的資料夾或上傳資料；只有點官方連結時才會連網。請直接傳檔案給別人；放上網路產生公開網址的話，任何拿到網址的人都能看到，也可能被搜尋或留存。</p><div class="source-links"><a href="https://learn.chatgpt.com/docs/projects" target="_blank" rel="noopener noreferrer">本地專案</a><a href="https://learn.chatgpt.com/docs/agent-configuration/agents-md" target="_blank" rel="noopener noreferrer">AGENTS 規則</a><a href="https://learn.chatgpt.com/docs/build-skills" target="_blank" rel="noopener noreferrer">建立 Skill</a><a href="https://learn.chatgpt.com/docs/enterprise/chatgpt-work-local-security" target="_blank" rel="noopener noreferrer">Work 資料處理</a></div><p>官方說明核對：2026/09/29。本指南只教操作，不提供診斷、法律或個資合規判定。</p></div><div class="foot-row"><div class="identity"><p class="version-line"><span id="version" aria-hidden="true">v 1.0.0 · 單檔版 · ZHS</span><span id="credit" class="sr-only">版本 1.0.0，單檔版。本軟體由 ZHS 設計與維護。</span></p></div></div></footer>
+<dialog id="prompt-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-summary"><div class="dialog-head"><h2 id="dialog-title"></h2><button class="close" id="dialog-close" type="button" autofocus><span data-icon="close"></span>關閉</button></div><div class="dialog-body"><p id="dialog-summary"></p><label for="prompt-text">完整提示詞｜整段複製後，貼到自己的 AI 對話。</label><textarea id="prompt-text" readonly spellcheck="false"></textarea><div class="dialog-actions"><button id="dialog-copy" class="prompt-copy" type="button"><span data-icon="copy"></span><span class="copy-label">複製給 AI</span></button><p id="dialog-status" class="status" role="status" aria-live="polite"></p></div></div></dialog>
+<script id="guide-content" type="application/json">{"beginner": [{"id": "prepare", "title": "準備一個練習資料夾", "short": "準備", "icon": "folder", "lead": "請在要操作的那台電腦上打開這一頁。先準備好資料夾和範本，後面就能讓 AI 帶著你做。", "do": ["新建一個資料夾，放進一份還沒填寫的 Word 範本（有標題和表格，但沒有個案內容）。", "在 ChatGPT 桌面版開新對話，按〔選擇專案〕→〔新專案〕，在〔新增〕選這個資料夾，再按〔建立專案〕。", "複製下方文字貼上。"], "expect": "AI 確認範本可讀，你就能開始口述。", "summary": "AI 會確認資料夾與範本，說明能做什麼；這一步先不修改文件。", "prompt": "我是新手，想用 ChatGPT 桌面版，把口述內容整理成 Word 報告。這次只用假資料，先完成一份報告，再考慮長期設定。\n\n請告訴我你目前連接的資料夾名稱，以及裡面找到的 Word 範本檔名，問我對不對，不要打開其他檔案。只有一份就用它；有好幾份時，列出來讓我選。資料夾不對或找不到範本時，提醒我開新對話，用「選擇專案」選我的專案，再貼一次這段文字。\n\n我回「對」之後，請讀這份範本，簡短說明報告用途、主要欄位，以及能否製作 Word 文件和查看實際版面。讀不到、工具不足或字體不可用，要明確說明，不假稱已讀或可完全還原。\n\n這一步只做準備核對，不修改原檔、不建立 AGENTS 或 Skill、不掃描其他資料夾。檔案在本機不等於模型在本機離線運算；若資料處理方式不符合我的要求，先停止讀取內容並說明。\n\n請用白話帶我處理現在最少必要的一步。準備完成後，告訴我可以開始口述。"}, {"id": "first-report", "title": "口述，讓 AI 做出草稿", "lead": "不必先寫好完整文章。把這次想記錄的事情說出來，讓 AI 幫你整理。", "do": ["複製下方文字，貼到剛才的對話。", "AI 說可以開始後，用語音或文字說這次的活動與觀察；請用編的人和事，不確定就說不確定。", "回答必要問題，再打開 AI 提供的 Word 草稿。"], "expect": "一份另存的 Word 草稿，以及尚待你確認的內容。", "prompt": "我是新手，想用 ChatGPT 桌面版把口述或零散筆記整理成 Word 報告。這次全部使用假資料。\n\n沿用剛才確認好的資料夾與範本；如果這是新對話，或你還沒讀過範本，請先重新確認，不要假裝已讀到檔案。\n\n準備好後告訴我可以開始口述，再帶我填入這次內容。一次只問一個會影響成果的必要問題；能從已授權檔案取得的資訊先自行查看。我的回答足夠完成草稿時就先做，不要為了蒐集所有偏好而一直追問。\n\n保留原檔，沿用範本的字體、字級、表格與頁面設定，成果另存成明確標示「草稿」的新檔。範本中的人物資料、日期、治療目標與勾選項目，只有我明確指定時才能沿用。不補造數值、專業判斷或未提供的事實；關鍵語意不清楚時先問，其他缺資料可列為待確認。\n\n製作後請檢查內容與實際呈現的版面，核對字體、標題與表格的相對位置、分頁、截斷及是否殘留範本人物資料。如果沒有工具檢查或字體不可用，請說明限制，不宣稱格式完全一致。\n\n請提供可開啟的成果、待確認事項，以及我現在只需要看什麼。收到我的具體修正後，完成相應修改並重新檢查。不要讀取無關資料夾或把檔案對外傳送。", "short": "口述", "icon": "mic", "summary": "AI 會讀範本、聽你口述、補問必要資訊，再另存報告。", "example": "「化名小安，這次用合作桌遊，觀察到能等待輪流；沒有記錄專注時間。請放進範本。」"}, {"id": "review-report", "title": "看草稿，說出要改的地方", "short": "修正", "icon": "check", "lead": "你不用懂排版指令。說清楚「哪裡不對」與「希望變成什麼」，AI 再修改。", "do": ["在對話中點一下 AI 做好的草稿，它會在右邊的預覽區打開；先看內容是否正確，再看字體、標題和表格位置。", "按預覽區上方的〔標註〕，點選要改的地方，或拖曳框出一塊範圍，寫下想怎麼改，再儲存；可以一次標好幾處。", "複製下方文字貼到對話送出；AI 改完後再看一次，還有差異就再標註。", "已經先送出也沒關係：在預覽區標註後，再送一句「請依我附上的標註修改」。"], "expect": "內容與格式符合你的需要；由你確認這份報告可用。", "summary": "AI 會依你的具體回饋修正、重新檢查，保留已確認內容和原範本。", "example": "第 1 頁「二、治療技術」要放在勾選表上方，其他內容不變。", "prompt": "我已看過這份假資料報告，以下指出需要修正的位置與預期結果。請依我的具體回饋修改，不要求我重新描述全部需求。\n\n先確認我指的是哪份草稿，以及指定的範本。能從檔案或註記判斷的事項自行核對；確實有多種解釋時，一次只問一個必要問題，例如哪一頁、哪個物件、要在誰的上方或下方。\n\n保留已確認的事實和內容，沿用範本格式，只修正我指出的差異。不要新增觀察、數值、專業判斷或其他人物資料。成果另存，保留原範本，不擅自全面重做。\n\n修正後檢查實際版面，包括字體、標題與表格相對位置、分頁與截斷；不能檢查的部分明確列出。提供可開啟的文件，並用白話告訴我這次改了哪裡、現在要看什麼。\n\n依我的回饋繼續修正，直到我明確表示符合需要；不要替我宣布已滿意。這次先完成報告，不自動把臨時要求寫進全域規則或 Skill。\n\n請依我這則訊息附上的標註修改（是我在 ChatGPT 預覽區加的標註，不是 Word 檔裡的註解）；沒有標註時，依我在下方寫的內容。兩者都沒有時，請先不要修改，改問我：哪一頁、哪個物件、希望變成什麼。\n\n我的修正要求如下：", "fill": ["哪一頁、哪個物件", "要變成什麼"], "annotate": true}], "advanced": [{"id": "privacy-files", "title": "個人化隱私與檔案管理", "lead": "先決定哪些資料能交給 AI，再決定怎麼存。案號與本機資料夾，都不能單獨保證資料不會被辨識或離開裝置。", "do": ["先用假資料說明管理需求，不先放入真實個案紀錄。", "與 AI 確認雲端處理界線、資料夾、命名、備份與保存習慣。", "看過管理方案，再授權實際建立或修改。"], "expect": "專案有明確的資料界線與檔案管理規則；日後依已確認方式處理。", "prompt": "我想個人化報告專案的隱私與檔案管理。請先用假資料與資料夾結構討論，不讀取真實個案檔案或掃描整台電腦。\n\n先說明目前工具的實際資料處理方式。檔案在本機不代表模型離線運算；代號也不保證無法識別。若我要求資料完全不離開裝置，請先確認工具是否能做到；不能做到就停止讀取真實內容，改用假資料設計本地流程，不以文字規則當作技術保證。\n\n請一次問一個會影響管理方式的必要問題，釐清：可處理的資料類型與雲端界線、不同個案如何隔離、檔名是否可含識別資訊、原始資料與草稿／已確認文件的位置、誰能存取、資料夾是否有雲端同步、備份與還原、版本命名、保存與刪除責任。\n\n我的回答足夠形成方案時，先提出簡單可用的安排，列出需要我決定的剩餘差異。保護每個個案的事實，不能跨個案套用目標、觀察、診斷或勾選。風格 Skill 與共用範本不保存真實個案內容。\n\n先把計畫、精確目標資料夾與需要的操作列給我確認。確認後再更新本專案規則；若有可重複的管理步驟，可建立相應 Skill。不要直接移動、覆蓋、刪除檔案、變更分享／權限、啟用同步或上傳資料。\n\n後續實際操作另依已確認範圍授權；涉及法規或機構保存要求，不猜造規定，列為需專業或正式來源確認的事項。", "short": "整理個案資料與存放界線", "icon": "cabinet", "analogy": "有分隔與門鎖的文件櫃", "analogy_text": "個案分開放，哪些資料能交給哪種工具處理，要先決定。", "example": "共用的食譜可以放方法；個案的紀錄放各自的位置，不把人物事實寫進共用 Skill。", "summary": "AI 會用假資料詢問隱私與管理需求，先提出方案，再依確認範圍保存規則。"}, {"id": "base-rules", "title": "把合作習慣存成規則", "lead": "第一份報告大致符合預期後，讓 AI 幫你把「每次都要提醒的事」保存下來。", "do": ["想一想：你偏好逐題詢問，還是先一次口述？", "複製下方文字，讓 AI 讀既有規則並提出簡短修改。", "確認內容後再寫入；請 AI 告訴你存在哪裡、影響哪些工作。"], "expect": "全域 AGENTS.md 保存共通習慣，專案 AGENTS.md 保存這個資料夾的要求。", "prompt": "我想把這次合作中確認好用的習慣，保存成全域與專案 Agent 規則，讓之後不用一直重複提醒。\n\n請先辨識目前工具支援的規則入口與生效範圍，讀取既有全域及本專案規則。不要假定任何名叫 agent.md 的檔案都會自動載入。\n\n先整理已有答案，再一次只問一個尚未確認、會實質影響合作的問題。請釐清我的回覆語言與長度、口述與詢問習慣、檔案修改界線、成果交付方式；已有答案不要重問。資料足夠時先給簡短提案，我看過後可再調整。\n\n請分開安排：\n- 全域 AGENTS.md：所有工作共用的習慣，例如繁體中文、白話、不猜重要資料、依授權保護原檔，以及對外操作前確認。\n- 本專案 AGENTS.md：這個資料夾的用途、我指定的來源、範本與輸出位置，以及不同報告對象的資料隔離要求。\n- 具體報告製作步驟與寫作風格留給 Skill，不把所有步驟塞進全域規則。\n\n先顯示將新增或修改的內容及影響範圍，等我確認後才寫入。保留既有有效規則；有真正衝突先指出，不直接覆蓋，不把一次性的內容變成永久規則。必要時建立不覆蓋舊檔的備份，不改其他系統或權限設定。\n\n寫入後回讀，告訴我實際檔案位置，以及你怎麼確認工具會使用這些規則。工具不支援的部分請明說。", "short": "每次都要重說合作習慣", "icon": "house", "analogy": "共同家規與房間說明", "analogy_text": "全域 AGENTS 是共同家規，所有工作都適用；專案 AGENTS 是房間說明，只適用這個資料夾。", "example": "共同家規：「都用繁體中文。」房間說明：「這裡的報告依指定範本，草稿放在草稿資料夾。」", "summary": "AI 會先問清習慣、查看既有規則，再提案讓你確認後保存。"}, {"id": "report-skill", "title": "保存成 Skill，下次直接用", "lead": "把已經做成功的流程保存起來，包含口述整理與基本文件檢查。用第二份假資料驗證它真的能重複使用。", "do": ["先確認第一份草稿的內容與格式符合期待。", "複製下方文字，讓 AI 建立「口述轉報告」Skill。", "在同專案開新對話，使用 Skill，再做一份假資料報告。"], "expect": "新對話能找出適用規則、Skill 與範本，完成第二份報告。", "prompt": "第一份假資料報告已經確認好用。請幫我把這套流程保存成「口述轉報告」Skill，供目前專案重複使用。\n\n先讀本專案規則與我已確認的範本、成果和修正。若你無法取得我指的是哪份成果，先詢問，不能自行推定已驗收。\n\n一次只問一個會改變成果的必要問題，補齊仍未確定的用途、輸入、完成標準與限制。提出簡短流程摘要讓我確認；確認後，我授權你在目前工具支援且可被發現的位置建立這個 Skill。\n\nSkill 應包括：何時使用與不使用、確認報告對象與範本、口述內容整理、必要歧義詢問、事實與專業判斷界線、另存草稿、內容及基本字體／表格／分頁檢查、接受修正與交付。實際欄位和版面以指定範本為準，個別人物的事實不寫入 Skill。\n\n若工具提供既有文件製作或檢查 Skill，請沿用其能力；沒有時說明實際能檢查的範圍。完整檢查不足時不能宣稱完全一致。\n\n使用正式 SKILL.md 結構，包含 name、description 和清楚的觸發範圍，並參照目前工具的實際載入方式。不要只建立普通文字檔後宣稱它會自動載入。\n\n建立後回讀，說明檔案位置、啟用方式與我的一句啟動指令，再帶我在同專案的新對話，以第二份假資料確認規則、Skill 和範本真的有讀到。若目前工具無法自動發現，提供明確手動選取方法，不假稱成功。不要修改與這個流程無關的設定。", "short": "下次也想照這套流程做", "icon": "recipe", "analogy": "把成功做法寫成食譜", "analogy_text": "Skill 像食譜：記下材料、步驟與完成標準，下次照著做。", "example": "這份食譜是「讀範本 → 聽口述 → 補問 → 製作 → 檢查」，每次換成這次的內容。", "summary": "AI 會把你已確認的流程做成 Skill，再用另一份假資料試做。"}, {"id": "writing-style", "title": "做出「像我寫的」風格 Skill", "lead": "準備 2～3 份你認為寫得好的示範文字。先讓 AI 描述你的風格，再用新內容試寫，確認後保存。", "do": ["先清除姓名、日期與其他識別資訊；最好改成假資料。", "指出喜歡或不喜歡的句子，不必自己整理成規則。", "看試寫結果，說哪裡不像你；確認後再保存 Skill。"], "expect": "得到獨立的寫作風格 Skill，可供口述轉報告流程引用。", "prompt": "我想建立「我的報告寫作風格」Skill。我會提供已移除個人識別資訊、可交給此工具處理的示範文字。\n\n請先確認可用的示範資料與我的報告用途，分析段落組織、語氣、句子長度、用詞、觀察與推論的區分、我常用或避免的表述。範例中的人物事實、診斷與結論不代表新報告也成立。\n\n先用白話告訴我你觀察到的風格，區分有範例支持的特徵與你的推測。一次只問一個還不清楚、會影響風格的問題；不要要我重新描述範例已經能看出的事情。\n\n用一段新的假資料試寫，讓我指出哪裡像我、哪裡不像。按我的回饋調整，直到我確認符合需要；不要替我宣布已滿意，也不要為了反覆詢問拖延試寫。\n\n我確認後，授權你依目前工具支援的方式建立獨立風格 Skill，保存抽象風格規則、必要的匿名示例、觸發方式與避免事項。實際文件版面仍依指定範本；不保存原個案資料，不加入示範沒有支持的專業結論。\n\n若已有「口述轉報告」Skill，請提出如何引用這個風格 Skill 的最小修改，確認後更新，避免在兩處維護完整風格規則。最後回讀並用另一段假資料驗證可使用。", "short": "希望文字更像我寫的", "icon": "pen", "analogy": "找一位懂你的編輯", "analogy_text": "給編輯幾篇滿意的文章，他就能學你的語氣與組織方式。", "example": "你偏好「描述看到的行為」，AI 就不該把一次觀察寫成「已有顯著進步」。", "summary": "AI 會分析示例、用假資料試寫；你確認後，才保存成風格 Skill。"}, {"id": "document-check", "title": "把格式與字體檢查做得更細", "lead": "內容、寫作風格與文件版面分開檢查。尤其注意：原檔設定保留，仍可能因文字長度或字體缺少而改變分頁。", "do": ["指定哪份是版面基準，哪份是待檢查成果。", "說清楚最重要的要求，例如頁數、表格與標題位置。", "讓 AI 比較實際畫面；看不到的項目要列為未驗證。"], "expect": "可重複使用的文件格式檢查 Skill，留下可理解的差異與檢查結果。", "prompt": "我想建立「報告文件格式檢查」Skill，用來檢查口述轉報告產生的 Word 文件。\n\n先確認指定的基準範本、待檢查文件與目前工具能否實際開啟或渲染文件。一次只問一個會影響判斷的需求，例如哪些格式必須保留、頁數是否固定、內容增長可否換頁。不要自行假定所有報告必須一頁。\n\n請把內容核對與視覺格式核對分開。適用的檢查包括字體是否可用、字級與段落樣式、行距、頁面邊界、頁首頁尾、表格尺寸、標題與表格相對位置、勾選項目、分頁、截斷或空白頁，以及是否殘留其他人的資料。\n\n必須比較實際呈現，不能只因文件中的字型名稱相同就宣稱外觀完全一致。缺字體時先說明，不擅自替換、下載或安裝。無法渲染時清楚列出尚未驗證的項目，提供最少必要的人工檢查方法。\n\n先拿一份假資料成果試跑，簡短列出差異、可修正處與限制。我確認檢查範圍後，授權你建立正式 Skill。優先引用工具既有文件能力與指定範本，不重複複製整份範本規格。檢查預設唯讀；修正文件、替換字體或改動範本須有相應授權。\n\n建立後回讀，讓口述轉報告流程在交付前使用這個檢查 Skill，並驗證它能被發現與使用。", "short": "交件前檢查字體和版面", "icon": "check", "analogy": "請校稿員最後看一遍", "analogy_text": "格式檢查 Skill 像校稿員：拿成果對照範本，檢查實際呈現。", "example": "字型名稱相同，電腦缺少字體時仍可能長得不同；校稿要看真正的頁面。", "summary": "AI 會確認你在意的格式、試跑檢查，再保存成可重複使用的 Skill。"}, {"id": "question-style", "title": "讓 AI 問到剛好，做出來再調整", "lead": "逐題詢問適合剛開始；熟悉後，也可以先一次口述，再補必要問題。滿意與否由你確認。", "do": ["選一種方式：逐題問、先聽完，或兩者混合。", "請 AI 先整理已知內容，不重問答過的事情。", "有足夠資料就看草稿，再針對差異修正。"], "expect": "詢問節奏配合你，不會漏問關鍵資料，也不會無止盡訪談。", "prompt": "請幫我調整這個報告流程的詢問方式。先問我偏好「逐題詢問」「先讓我一次口述，再補問」「兩者混合」哪一種，再依我的回答執行。\n\n先整理目前已知資訊與我已回答的事項。你能從已授權來源查明的事情請自行查，不把你的查核工作變成我的問題。\n\n每次只問一個會影響成果的必要問題，並告訴我這個答案會影響哪裡。我的口述若只是一般語句不順，可整理；姓名、日期、數值、單位或專業意義不清楚時不能猜。\n\n資料足夠完成有用草稿時就先做，非關鍵缺口列為待確認。看過草稿後，請我指出不符合需求之處，再修正與檢查，直到我明確確認符合預期。\n\n請先把這個節奏實際用在目前報告。只有我確認值得長期沿用後，才更新適當的專案規則或 Skill；不要把這次臨時偏好自動寫進全域。", "short": "調整 AI 問問題的節奏", "icon": "talk", "analogy": "一起工作的訪談助手", "analogy_text": "你可以請助手逐題問，或先聽完，再補上真正缺少的資訊。", "example": "你說「先讓我講完」，助手就先記錄；有足夠材料時先出草稿，不一直訪談。", "summary": "AI 會先問你的偏好，再實際試用；你確認後，才保存長期習慣。"}, {"id": "many-templates", "title": "有不同報告，就選不同範本", "lead": "個別報告、家長回饋與行政摘要，可以共用合作習慣，各自使用指定範本與必要的工作步驟。", "do": ["提供各範本的用途，不提供多個真實個案當練習。", "請 AI 先分清共用規則與各報告的差異。", "每次開始先確認這次要做哪一種。"], "expect": "不同報告不混用欄位、口吻與檔案；相同規則維持單一來源。", "prompt": "我有多種報告範本，想讓 AI 每次選對流程。請先列出我已授權讀取的範本候選與用途；用途不明時一次問一個問題，不依檔名猜定正式範本。\n\n請釐清各報告的受眾、輸入、輸出、格式與完成標準，分開共用的合作規則／風格，以及只適用某一報告的步驟。優先沿用已有正式來源，不把相同規則到處複製。\n\n先提出最小分工方案讓我確認，再建立或修改對應的專案規則與 Skill。每次開始須確認這次的報告種類、對象與範本，不能沿用上一份個案的資料。\n\n以各一份假資料驗證選用正確，並告訴我之後如何用一句話選擇。", "short": "不同報告用不同範本", "icon": "folder", "analogy": "先挑對表格再填寫", "analogy_text": "像辦不同事情要拿不同表格，報告用途不同，範本也要選對。", "example": "家長回饋與行政摘要可能需要不同口吻；開始時先說清楚這次要做哪一種。", "summary": "AI 會釐清各範本用途，先提最小分工方案，再用假資料驗證。"}], "problems": [{"id": "wrong-format", "title": "字體、表格或分頁不符合範本", "lead": "最快的方法：在對話中點一下文件，在右邊的預覽區用〔標註〕框出不一樣的地方，寫下希望改成什麼。不用自己找檔名，AI 會先說出它認為是哪兩份，你確認就好。", "example": "第 1 頁活動表的字變大了；要跟原範本一樣，內容不要改。", "prompt": "目前報告的字體、表格或分頁與我預期不符。請先告訴我你認為的範本和要修改的檔案是哪兩份；我回「對」你再改。找不到或不確定時，直接問我。\n\n請比較實際呈現，找出差異與原因，先修正我指出的問題。沿用基準的字體、字級、段落、表格和頁面設定，保留已確認的內容；修正成果另存，不覆蓋基準範本。\n\n不要只根據設定或檔案內字型名稱宣稱完全一致。若缺字體或沒有渲染工具，請明確說明哪裡未驗證，不自行替換或安裝。\n\n修正後重新檢查，提供檔案與我需要看的具體位置。若同一問題反覆發生，先查原因與最小修正，不整份重做。\n\n請依我這則訊息附上的標註修改（是我在 ChatGPT 預覽區加的標註，不是 Word 檔裡的註解）；沒有標註時，依下方【我的情況】。兩者都沒有時，請先不要修改，一項一項問我。\n\n【我的情況】\n哪裡不一樣（例如：第 1 頁表格的字變大）：\n希望改成什麼樣子：", "short": "字體、表格或分頁不符合範本", "icon": "wrench", "summary": "AI 會先說出它認為的範本和檔案，你確認後，只修正你指出的差異並另存。", "fill": ["哪裡不一樣", "希望改成什麼"], "annotate": true}, {"id": "wrong-position", "title": "標題或表格，位置不如預期", "lead": "最快的方法：在對話中點一下文件，在右邊的預覽區用〔標註〕直接點選那個標題或表格，寫下要移到哪裡。沒辦法標註時，再說明在哪一頁、要放在誰的上面或下面。", "example": "第 1 頁「二、治療技術」要在勾選表上方，和表格一起移動；可以換頁。", "prompt": "請依我這則訊息附上的標註或下方說明，修正指定標題、段落或表格的位置。請先告訴我你認為要修改的是哪個檔案；我回「對」你再改。\n\n先確認目標物件與相對位置：哪一頁、哪個標題或表格、應在誰的上方／下方、同頁或另頁。若註記與描述還不夠明確，一次只問一個必要問題；不要猜移到另一個章節。\n\n請只移動指定物件，保留它的文字、字體與表格內容，也保留其他已確認的內容。位置目標以我這次的明確描述為準；如果與原範本不同，指出差異，不擅自擴成重設計。\n\n檢查標題是否真的出現在對應表格之前、是否因浮動物件或分頁而跑位。另存修正版，重新查看實際版面，提供我能核對的位置或畫面。沒有工具驗證時說明限制。\n\n請依我這則訊息附上的標註修改（是我在 ChatGPT 預覽區加的標註，不是 Word 檔裡的註解）；沒有標註時，依下方【我的情況】。兩者都沒有時，請先不要修改，一項一項問我。\n\n【我的情況】\n在第幾頁：\n要移動的是哪個標題或表格（寫出上面的文字）：\n要放在什麼東西的上面或下面：\n可以跑到下一頁嗎：", "short": "標題或表格，位置不如預期", "icon": "wrench", "summary": "AI 會先確認要移動的物件與相對位置，只移動你指定的部分。", "fill": ["在第幾頁", "要移動的標題或表格", "放在誰的上面或下面", "可不可以換頁"], "annotate": true}, {"id": "wrong-writing", "title": "內容太像 AI，不像我的寫法", "lead": "在對話中點一下文件，在右邊的預覽區用〔標註〕選取不喜歡的那句話，寫下哪裡不像你、你會怎麼寫。描述差異比只說「自然一點」更有用。", "example": "「已有顯著進步」語氣太強；我會寫「這次能等待輪流兩次」。", "prompt": "這份報告的文字不符合我的寫作習慣。請依我指出的句子與可使用的示範文字修正。\n\n先讀已有寫作風格 Skill；若沒有，先用目前回饋調整，不擅自假造我的長期風格。一次只問一個會影響修正的必要問題。\n\n保留原始事實，調整語氣、句子長度與用詞。不要增加來源沒有的療效、因果、診斷或專業結論，也不要為了文句流暢移除重要限制。\n\n先給我修正前後的短段落比較，我確認後再改進文件，保留文件格式。只有我同意把這次修正當作長期偏好，才更新風格 Skill。\n\n請依我這則訊息附上的標註修改（是我在 ChatGPT 預覽區加的標註，不是 Word 檔裡的註解）；沒有標註時，依下方【我的情況】。兩者都沒有時，請先不要修改，一項一項問我。\n\n【我的情況】\n不喜歡的那句話（直接貼上）：\n哪裡不像你（例如：語氣太肯定、句子太長）：\n你會怎麼寫（一句就好）：", "short": "內容太像 AI，不像我的寫法", "icon": "wrench", "summary": "AI 會保留事實、調整語氣，先給你修改前後的比較。", "fill": ["不喜歡的那句話", "哪裡不像你", "你會怎麼寫"], "annotate": true}, {"id": "too-many-questions", "title": "AI 一直問，還沒開始做", "lead": "請它列出已知資訊，區分真的缺資料與只是想知道偏好。有足夠材料就先出草稿。", "prompt": "請先停止重複訪談，整理我已提供的內容與已確認答案。\n\n區分「現在不回答會造成錯誤的必要問題」和「可看草稿後再調整的偏好」。能從已授權檔案查明的資訊先自行查。\n\n資料足夠時直接完成目前範圍內的草稿，非關鍵缺口列為待確認。若確實無法做，現在只問一個最關鍵的問題，並說明它會影響哪裡。不要猜重要事實，也不要要求我重新說全部需求。", "short": "AI 一直問，還沒開始做", "icon": "wrench", "summary": "AI 會停止追問、整理已知內容，能做的先做成草稿。"}, {"id": "missing-context", "title": "新對話沒讀到規則或 Skill", "lead": "同專案不代表每個對話自動讀過另一個對話。請 AI 說出實際讀取的規則、Skill 與範本位置。", "prompt": "這是同專案的新對話。請先核對目前工作資料夾、適用的全域與專案規則，以及可用的口述轉報告／寫作風格／文件檢查 Skill。\n\n只回報你實際讀到的檔案位置與用途，區分「檔案存在」和「工具能自動發現並載入」。不要假定你已看過另一個對話或記得上一份個案內容。\n\n找不到時先確認工具的正式載入方式與目前位置。若需要我提供範本或手動選取 Skill，只告訴我最少需要做的一個動作；不要先重建整套規則，也不要猜用同名檔案。\n\n確認來源後，先問這次的報告種類與對象，再開始。", "short": "新對話沒讀到規則或 Skill", "icon": "wrench", "summary": "AI 會列出實際讀到的規則、Skill 與範本位置，找不到時告訴你最少要做的一件事。"}, {"id": "wrong-person", "title": "混入上一份報告或別人的資料", "lead": "先停止繼續套用。指出受影響的檔案，請 AI 依本次來源逐項核對，不能只換掉姓名。", "example": "第 2 頁還留著上一份的日期和勾選。", "prompt": "這份草稿可能混入另一份報告的資料。請先停止套用或擴展內容。\n\n先告訴我你認為受影響的是哪個檔案、這份報告的對象是誰；我回「對」再繼續。只在已授權範圍內，核對姓名或代號、日期、基本資料、目標、活動、觀察、勾選，以及頁首頁尾、註解、修訂與其他可能殘留資訊；不要只替換姓名就宣稱清乾淨。\n\n本次來源未提供的事實先留白或列待確認，不從其他人物補入，不猜造正確內容。保留原檔，另存修正版，清楚列出實際檢查範圍與還不能確認的部分。\n\n若來源本身含真實敏感內容，先依已確認的資料處理界線核對你能否讀取；無授權或工具不符合要求時停止受影響讀取。\n\n找到流程原因後，提出能防止再次混用的規則或 Skill 修改，等我確認後保存。\n\n如果下方【我的情況】是空白的，請先不要修改，一項一項問我。\n\n【我的情況】\n看到哪些不該出現的內容：", "short": "混入上一份報告或別人的資料", "icon": "wrench", "summary": "AI 會停止套用、逐項核對殘留資料，另存乾淨版本。", "fill": ["看到哪些不該出現的內容"]}, {"id": "cannot-read", "title": "AI 說找不到檔案，或不能修改", "lead": "如果 AI 說出的資料夾不是你的（例如名稱是一串英文），開一個新對話，用〔選擇專案〕選你的專案，再貼一次就好。其他情況，把下方文字貼給 AI，讓它查是連接、路徑還是權限的問題；不要一口氣開放整台電腦。", "prompt": "你目前找不到檔案或無法修改。請先查明是資料夾沒有連接、檔案未下載、路徑不符、目前工具不支援，還是權限限制。\n\n先完成你能做的唯讀核對，根據實際結果說明，不宣稱不存在的檔案或未執行的操作成功。不要繞過限制，不擴大到整台電腦，也不要把同名搜尋結果直接當成目標。\n\n如果確實需要我操作，只告訴我現在在哪個畫面、按什麼、預期看到什麼，以及完成後要回報什麼。涉及新增權限，請明確說明具體範圍與原因，讓我確認。", "short": "AI 說找不到檔案，或不能修改", "icon": "wrench", "summary": "AI 會先查出是連接、路徑還是權限的問題，不擴大存取範圍。"}, {"id": "fix-loop", "title": "越修越亂，或同一問題一直出現", "lead": "先找最後一份符合預期的版本，保存目前檔案，再釐清一個問題的原因。不要一直叫 AI 整份重做。", "example": "表格一直跑到下一頁；先只修這個。", "prompt": "同一個問題反覆修正仍不符合預期。請先停止猜測式修改，保留目前檔案，不覆蓋或刪除既有版本。\n\n先告訴我你認為最後一份符合預期的版本和目前的檔案各是哪一份；我回「對」再繼續。讀取相關來源與實際畫面，找出能重現問題的步驟及原因；不足時只問一個必要問題。\n\n先說明差異、原因與最小修正方案。我確認後，依授權只修受影響部分，再用相同情境驗證。保留已確認內容，不用重建整份文件掩蓋問題。\n\n若受字體、工具或檔案本身限制，說明實際證據與可行替代，不假稱已完全修好。\n\n如果下方【我的情況】是空白的，請先不要修改，一項一項問我。\n\n【我的情況】\n這次只想先修好的一件事：", "short": "越修越亂，或同一問題一直出現", "icon": "wrench", "summary": "AI 會停手、比較版本、找出原因，再提出最小修法。", "fill": ["這次只想先修好的一件事"]}]}</script>
+<script>
+'use strict';
+const paths={
+ document:'<path d="M6 2h8l5 5v15H6zM14 2v5h5M9 11h7M9 15h7M9 19h4"/>',
+ mic:'<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"/>',
+ folder:'<path d="M3 6V4h6l3 3h9v13H3zM3 8h18"/>',
+ folderplus:'<path d="M3 6V4h6l3 3h9v13H3zM3 8h18M12 11v6M9 14h6"/>',
+ house:'<path d="m2 10 10-8 10 8M5 8v13h14V8M10 21v-7h4v7"/>',
+ recipe:'<path d="M5 3h14v18H5zM3 6h4M3 11h4M3 16h4M10 8h5M10 12h5M10 16h3"/>',
+ pen:'<path d="m4 16-1 5 5-1L20 8l-4-4zM14 6l4 4M4 16l4 4M12 21h9"/>',
+ check:'<path d="M6 2h8l5 5v7M14 2v5h5M9 11h5M9 15h2M6 2v20h5m2-3 3 3 6-7"/>',
+ cabinet:'<path d="M4 2h16v20H4zM4 9h16M4 16h8M9 5h6M9 12h6"/><rect x="14" y="18" width="8" height="5" rx="1"/><path d="M16 18v-2a2 2 0 0 1 4 0v2"/>',
+ talk:'<path d="M3 3h18v13H9l-6 5zM7 7h10M7 11h7"/>',
+ wrench:'<path d="M14 3a6 6 0 0 0-7 8l-5 6a3 3 0 0 0 4 4l6-5a6 6 0 0 0 8-7l-4 4-4-4z"/>',
+ copy:'<path d="M8 8h12v13H8zM16 8V3H3v13h5"/>',
+ annotate:'<path d="M4 9V4h5M15 4h5v5M4 15v5h5M12 12l8 3-3.5 1.5L15 20z"/>',
+ eye:'<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+ arrow:'<path d="M4 12h16m-6-6 6 6-6 6"/>',
+ close:'<path d="m6 6 12 12M6 18 18 6"/>',
+};
+function rich(text){const f=document.createDocumentFragment(),icons={'標註':'annotate','選擇專案':'folder','新增':'folderplus'};text.split(/〔([^〕]+)〕/).forEach((part,i)=>{if(i%2){const r=document.createElement('span');r.className='tool-ref';if(icons[part])r.append(icon(icons[part]));r.append(document.createTextNode(part));f.append(r);}else f.append(document.createTextNode(part));});return f;}
+function icon(name,cls='icon'){const span=document.createElement('span');span.innerHTML=`<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name]||paths.document}</svg>`;return span.firstElementChild;}
+document.querySelectorAll('[data-icon]').forEach(n=>n.replaceWith(icon(n.dataset.icon)));
+const content=JSON.parse(document.getElementById('guide-content').textContent),meta=JSON.parse(document.getElementById('guide-meta').textContent);
+const version=document.getElementById('version');version.textContent=`v ${meta.version} · 單檔版 · ${meta.credit}`;document.getElementById('credit').textContent=`版本 ${meta.version}，單檔版。本軟體由 ${meta.credit} 設計與維護。`;
+const names=['beginner','advanced','problems'],selected={},lookup={},dialog=document.getElementById('prompt-dialog'),promptText=document.getElementById('prompt-text'),dialogStatus=document.getElementById('dialog-status');let dialogItem=null,dialogTrigger=null;
+function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
+function openPrompt(item,trigger){dialogItem=item;dialogTrigger=trigger;document.getElementById('dialog-title').textContent=item.title;document.getElementById('dialog-summary').textContent=item.summary;promptText.value=item.prompt;dialogStatus.textContent='';if(!dialog.open)dialog.showModal();}
+async function copyPrompt(item,button,status){button.disabled=true;status.textContent='正在複製…';let copied=false;
+ if(navigator.clipboard&&window.isSecureContext){try{await navigator.clipboard.writeText(item.prompt);copied=true;}catch(_){}}
+ if(!copied){const tmp=el('textarea');tmp.value=item.prompt;tmp.setAttribute('aria-hidden','true');tmp.style.cssText='position:fixed;left:0;top:0;width:1px;height:1px;opacity:0';(dialog.open?dialog:document.body).append(tmp);tmp.focus();tmp.select();tmp.setSelectionRange(0,tmp.value.length);try{copied=document.execCommand('copy');}catch(_){}tmp.remove();button.focus({preventScroll:true});}
+ button.disabled=false;
+ if(copied){status.textContent=item.annotate?(item.prompt.includes('【我的情況】')?'已複製。先在文件上標註，再貼上送出；沒辦法標註時，在最後的【我的情況】寫下來。':'已複製。先在文件上標註，再貼上送出；沒辦法標註時，在最後寫下你的修正。'):item.prompt.includes('【我的情況】')?'已複製。貼上後，在最後的【我的情況】寫下你的情況，再送出。':item.prompt.endsWith('我的修正要求如下：')?'已複製。貼上後，在最後寫下你的修正，再送出。':'已複製。到 AI 對話貼上，就能開始。';const label=button.querySelector('.copy-label');if(label){label.textContent='已複製';button.classList.add('is-copied');clearTimeout(button._reset);button._reset=setTimeout(()=>{label.textContent='複製給 AI';button.classList.remove('is-copied');},2200);}}
+ else{openPrompt(item,button);promptText.focus();promptText.select();promptText.setSelectionRange(0,promptText.value.length);dialogStatus.textContent='瀏覽器未允許複製。文字已選取，請用複製快捷鍵或長按複製。';status.textContent='請在閱讀視窗手動複製文字。';}}
+document.getElementById('dialog-copy').addEventListener('click',()=>copyPrompt(dialogItem,document.getElementById('dialog-copy'),dialogStatus));
+document.getElementById('dialog-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>dialogTrigger?.focus({preventScroll:true}));
+for(const[section,entries]of Object.entries(content)){
+ const menu=document.querySelector(`[data-menu="${section}"]`),holder=document.querySelector(`[data-lessons="${section}"]`),select=document.querySelector(`[data-choose="${section}"]`);
+ selected[section]=entries[0].id;
+ entries.forEach((item,index)=>{
+  lookup[item.id]={item,section};
+  const li=el('li'),choice=el('button');choice.type='button';choice.dataset.item=item.id;choice.setAttribute('aria-current',String(index===0));choice.setAttribute('aria-controls','lesson-'+item.id);
+  if(section==='beginner')choice.append(el('span','step-num',String(index+1)));else if(section!=='problems')choice.append(icon(item.icon));
+  const txt=el('span','menu-text',item.short);if(section==='beginner')txt.append(el('small','',['準備範本與資料夾','說內容，取得草稿','看成果，再調整'][index]));choice.append(txt,icon('arrow','arrow'));choice.addEventListener('click',()=>navigate(section,item.id));li.append(choice);menu.append(li);
+  if(select){const option=el('option','',item.short);option.value=item.id;select.append(option);}
+  const article=el('article','lesson');article.id='lesson-'+item.id;article.hidden=index!==0;
+  if(section==='advanced'&&item.short&&item.short!==item.title){const k=el('p','kicker');k.append(el('strong','','你想改善：'),document.createTextNode(item.short));article.append(k);}
+  const lead=el('p','lead');lead.append(rich(item.lead));article.append(el('h3','',item.title),lead);
+  if(section==='beginner'&&index===0){const notice=el('div','notice');notice.append(el('p','','這一輪只用編的資料。檔案放在你的電腦裡，內容仍可能交給雲端模型處理；不要放入真實個案的姓名、生日、紀錄或錄音。'));article.append(notice);}
+  if(item.analogy){const a=el('div','analogy'),head=el('h4');head.textContent=item.analogy;a.append(head,el('p','',item.analogy_text));article.append(a);}
+  if(item.example&&!item.fill){const example=el('p','example');example.append(el('strong','',section==='advanced'?'想像這個例子':'口述時可以這樣說'),document.createTextNode(item.example));article.append(example);}
+  const action=el('div','prompt-action'),description=el('p','prompt-summary');description.append(el('strong','','這段會請 AI：'),document.createTextNode(item.summary.replace(/^AI 會/,'')));
+  const buttons=el('div','actions'),copy=el('button','prompt-copy'),view=el('button','secondary'),status=el('p','status');
+  copy.type='button';copy.dataset.copy=item.id;copy.setAttribute('aria-label','複製'+item.title+'提示詞');copy.append(icon('copy'),el('span','copy-label','複製給 AI'));
+  view.type='button';view.dataset.preview=item.id;view.setAttribute('aria-label','查看'+item.title+'完整文字');view.append(icon('eye'),document.createTextNode('查看完整文字'));
+  status.id='status-'+item.id;status.setAttribute('role','status');status.setAttribute('aria-live','polite');copy.addEventListener('click',()=>copyPrompt(item,copy,status));view.addEventListener('click',()=>openPrompt(item,view));buttons.append(copy,view);action.append(el('h4','prompt-title','貼給 AI 的需求'),description);if(item.fill){const n=el('p','fill-note'),t=el('span');if(item.annotate){const a=el('span','fill-line');a.append(rich('貼上前，在對話中點一下文件，在右邊的預覽區用〔標註〕指出要改的地方。'));t.append(a);}const w=el('span',item.annotate?'fill-line fill-alt':'fill-line',item.annotate?'沒辦法標註時，在最後寫：':'貼上後，在最後寫：');item.fill.forEach((x,i)=>w.append(el('span','fill-item',(item.fill.length>1?'①②③④'[i]+' ':'')+x)));t.append(w);if(item.example)t.append(el('span','fill-example','例如：'+item.example));n.append(icon('pen'),t);action.append(n);}action.append(buttons,status);
+  let placed=false;
+  if(item.do){const ol=el('ol','do-list');item.do.forEach(s=>{const li=el('li');li.append(rich(s));if(!placed&&s.includes('複製')){li.append(action);placed=true;}ol.append(li);});article.append(ol);}
+  if(!placed)article.append(action);
+  if(item.expect){const g=el('div','goal'),t=el('p','goal-text');g.append(el('p','goal-label','完成後，你會得到'));t.append(el('mark','',item.expect));g.append(t);article.append(g);}
+  if(section==='beginner'){const f=el('div','step-footer');const next=el('button');next.type='button';next.append(document.createTextNode(index<2?'下一步：'+entries[index+1].short:'改用真實個案前，先看這裡'),icon('arrow'));next.addEventListener('click',()=>navigate(index<2?section:'advanced',index<2?entries[index+1].id:content.advanced[0].id));f.append(next);article.append(f);}
+  holder.append(article);
+ });
+ if(select)select.addEventListener('change',()=>navigate(section,select.value));
+}
+function activate(section,id){if(!names.includes(section))section='beginner';id=lookup[id]?.section===section?id:selected[section];selected[section]=id;
+ for(const key of names){document.getElementById(key).hidden=key!==section;const tab=document.getElementById('tab-'+key);tab.setAttribute('aria-selected',String(key===section));tab.tabIndex=key===section?0:-1;}
+ document.querySelectorAll(`#${section} .lesson`).forEach(n=>n.hidden=n.id!=='lesson-'+id);document.querySelectorAll(`[data-menu="${section}"] button`).forEach(n=>n.setAttribute('aria-current',String(n.dataset.item===id)));const select=document.querySelector(`[data-choose="${section}"]`);if(select)select.value=id;
+}
+function navigate(section,id){activate(section,id);const hash='#'+id;if(location.hash!==hash)history.pushState(null,'',hash);}
+function fromHash(){let id;try{id=decodeURIComponent(location.hash.slice(1));}catch(_){id='';}if(lookup[id])activate(lookup[id].section,id);else if(names.includes(id))activate(id,selected[id]);else if(id!=='source-notes'&&id!=='guide-main')activate('beginner',selected.beginner);}
+for(const tab of document.querySelectorAll('[role="tab"]')){tab.addEventListener('click',()=>navigate(tab.dataset.section,selected[tab.dataset.section]));tab.addEventListener('keydown',event=>{let i=names.indexOf(tab.dataset.section);if(event.key==='ArrowRight')i=(i+1)%3;else if(event.key==='ArrowLeft')i=(i+2)%3;else if(event.key==='Home')i=0;else if(event.key==='End')i=2;else return;event.preventDefault();const next=document.getElementById('tab-'+names[i]);next.click();next.focus({preventScroll:true});});}
+window.addEventListener('popstate',fromHash);window.addEventListener('hashchange',fromHash);fromHash();document.documentElement.classList.add('enhanced');
+</script></body></html>
